@@ -10,11 +10,7 @@
     {
       "target": "production",
       "public": "hosting/production_community",
-      "ignore": [
-        "firebase.json",
-        "**/.*",
-        "**/node_modules/**"
-      ],
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
       "rewrites": [
         {
           "source": "**",
@@ -23,17 +19,19 @@
         {
           "source": "/downloads/**",
           "destination": "/downloads/**"
+        }
+      ],
+      "headers": [
+        {
+          "source": "/service-worker.js",
+          "headers": [{ "key": "Cache-Control", "value": "no-cache" }]
         }
       ]
     },
     {
       "target": "staging",
       "public": "hosting/staging_platform",
-      "ignore": [
-        "firebase.json",
-        "**/.*",
-        "**/node_modules/**"
-      ],
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
       "rewrites": [
         {
           "source": "**",
@@ -43,7 +41,12 @@
           "source": "/downloads/**",
           "destination": "/downloads/**"
         }
-
+      ],
+      "headers": [
+        {
+          "source": "/service-worker.js",
+          "headers": [{ "key": "Cache-Control", "value": "no-cache" }]
+        }
       ]
     }
   ]
