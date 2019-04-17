@@ -1,3 +1,15 @@
+## Fightback Platfom and Website
+This is a fork of https://github.com/d1no/coinglaze and adapted to serve the http://fightback.community website via firebase and a content sync of google sheet via an appscript module.
+ - Production: http://fightback.community or http://admin.fightback.community 
+ - Staging:  http://staging.fightback.community or http://preview.fightback.community
+
+#### Relevant Sources (need to be part of factor10 organisation):
+ - Google Cloud Platform / Firbase Database: https://console.firebase.google.com/project/fightbackplatform/database/fightbackplatform/data
+ - Google Sheet with Content: https://docs.google.com/spreadsheets/d/1R15FyJnUDf6MIwWkoHlU2wZzK8-F7YhXsZ3yQ4J-Loc/edit#
+  - Associated Appsscript to extend sheet (use `server_appsscript` to deploy updates via `clasp`): https://script.google.com/a/factor10.io/d/M9DtgwOQrUS_ozru_9KWgjkXkXO3hFhiV/edit?mid=ACjPJvE_i1PuEylzTAFaz_Y9ivmfhBE5BD8Lf6iC0-uUX0Q2VvTRvEpQ0sPlsu3yDMd-vMdw3YccF0KoLRvk8cTvrLuc8Uvej4KlH5paO8l_5P2gHbA7_vnThPwOCtXZ4NlGE6dFOLKm6Xc&uiv=2
+
+-------
+
 ## What is this?
 
 > This is a study for deriving a new type of code challenge from a normalised workflow for "tasking a sample react app with modern tools", that actually covers the E2E / full stack process for fetching, displaying, testing and composing a product. This helps to better estimate sprint loads and/or interview full stack engineers in a qualitative way.
