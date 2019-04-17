@@ -1,0 +1,2 @@
+#### Updating Google App Script
+In order to push updates to google app script, you need to have `typescript` installed. This transpiles ES6/TypeScript into the angent version google app script is using (ES3).

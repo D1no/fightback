@@ -1,0 +1,17 @@
+{
+  "projects": {
+    "default": "fightbackplatform"
+  },
+  "targets": {
+    "fightbackplatform": {
+      "hosting": {
+        "production": [
+          "fightbackcommunity"
+        ],
+        "staging": [
+          "fightbackplatform"
+        ]
+      }
+    }
+  }
+}
