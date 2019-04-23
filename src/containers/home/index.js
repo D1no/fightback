@@ -17,6 +17,7 @@ const ContentWrapper = styled(Box)`
 `;
 
 function Home(props) {
+  // eslint-disable-next-line
   const [baseCurrency, setBaseCurrency] = useState("EUR");
 
   return (
