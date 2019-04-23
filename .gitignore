@@ -31,6 +31,7 @@ lib-cov
 
 # IDE
 .vscode
+.idea
 
 # dependencies
 /node_modules
