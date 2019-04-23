@@ -22,7 +22,7 @@
     "styled-system": "4.1.0"
   },
   "scripts": {
-    "dependency-upgrade-check": "yarn upgrade-interactive --latest",
+    "upgrade-check": "yarn upgrade-interactive --latest",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "cypress run",
