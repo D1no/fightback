@@ -8,6 +8,13 @@ This is a fork of https://github.com/d1no/coinglaze and adapted to serve the htt
  - Google Sheet with Content: https://docs.google.com/spreadsheets/d/1R15FyJnUDf6MIwWkoHlU2wZzK8-F7YhXsZ3yQ4J-Loc/edit#
   - Associated Appsscript to extend sheet (use `server_appsscript` to deploy updates via `clasp`): https://script.google.com/a/factor10.io/d/M9DtgwOQrUS_ozru_9KWgjkXkXO3hFhiV/edit?mid=ACjPJvE_i1PuEylzTAFaz_Y9ivmfhBE5BD8Lf6iC0-uUX0Q2VvTRvEpQ0sPlsu3yDMd-vMdw3YccF0KoLRvk8cTvrLuc8Uvej4KlH5paO8l_5P2gHbA7_vnThPwOCtXZ4NlGE6dFOLKm6Xc&uiv=2
 
+#### How to run:
+ - you should use `yarn` instead of `npm`
+ - clone this repo
+ - run `yarn install`
+ - run `yarn start` for development
+ - run `yarn build` for building
+
 -------
 
 ## What is this?
