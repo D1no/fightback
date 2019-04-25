@@ -1,18 +1,9 @@
 import React from "react";
-import { ApolloProvider } from "react-apollo";
-import { ApolloProvider as ApolloProviderHooks } from "react-apollo-hooks";
 
 /**
- * Clients to be used as data providers.
+ * Place to use Apollo-Link and Set Provider. Purged, since not used.
  */
-import coinbase from "./coinbase";
 
-const Provider = props => (
-  <ApolloProvider client={{ coinbase }}>
-    <ApolloProviderHooks client={coinbase}>
-      {props.children}
-    </ApolloProviderHooks>
-  </ApolloProvider>
-);
+const Provider = props => props.children;
 
 export default Provider;
