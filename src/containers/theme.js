@@ -13,7 +13,7 @@ import { ThemeProvider, createGlobalStyle } from "styled-components/macro";
  */
 // prettier-ignore
 const lightTheme = {
-  maxWidth: "1024px",
+  maxWidth: "1110px",
   breakpoints: [
     "40em", // 00
     "52em", // 01

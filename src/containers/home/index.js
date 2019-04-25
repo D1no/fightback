@@ -26,11 +26,21 @@ function Home(props) {
         <Layout
           debug={false}
           sectionHeader={
-            <Header title={<SheetsyncLine path={"static/about/title"} />} />
+            <Header
+              title={<SheetsyncLine path={"static/event/pagename"} />}
+              subtitle={<SheetsyncLine path={"static/event/hook"} />}
+            />
           }
           sectionTopControl={<HeadSelect />}
+          sectionSidebarControl={
+            <SheetsyncLine path={"static/attendance/panelmarkdown"} />
+          }
+          heroLeft={<SheetsyncLine path={"static/event/summary"} />}
+          heroRight={<SheetsyncLine path={"static/event/date"} />}
         >
           <SheetsyncLine path={"static/about/title"} />
+          <SheetsyncLine path={"static/about/markdown"} />
+          <SheetsyncLine path={"static/about/author"} />
           <SheetsyncList path={"sessions"}>
             {({ item, index }) => (
               <div key={index}>
@@ -39,6 +49,8 @@ function Home(props) {
               </div>
             )}
           </SheetsyncList>
+          <SheetsyncLine path={"static/footer/copyright"} />
+          <SheetsyncLine path={"static/event/email"} />
         </Layout>
       </Suspense>
     </ContentWrapper>

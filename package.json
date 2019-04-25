@@ -40,7 +40,9 @@
     "format": "prettier --list-different --write \"*/**/*.{ts,tsx,js,jsx,json,html,css}\"",
     "precommit": "lint-staged",
     "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "deploy-staging": "yarn build && firebase deploy --only hosting:staging",
+    "deploy-production": "yarn build && firebase deploy --only hosting:production"
   },
   "eslintConfig": {
     "extends": [

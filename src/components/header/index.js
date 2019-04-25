@@ -12,9 +12,9 @@ const Logo = styled(Flex)`
 // TODO: Make Component View debuggable (background)
 // TODO: Align Logo with badges of cards
 const Header = ({
-  short = "CG",
-  title = "Welcome to Coinglaze!",
-  subtitle = "All crypto pairs in one glaze.",
+  short = "F",
+  title = "Fightback Summit",
+  subtitle = "Fightback Summit Nr. 3",
 }) => {
   return (
     <Flex
@@ -30,16 +30,21 @@ const Header = ({
           p={0}
           alignItems="center"
           justifyContent="center"
-          fontSize={5}
-          bg="gray"
+          fontSize={6}
+          bg="#222"
         >
-          <Text color="light" fontFamily="prominent">
+          <Text color="white" fontFamily="arbutus-slap">
             {short}
           </Text>
         </Logo>
       </Box>
       <Box width={4 / 5}>
-        <Heading as="h2" data-test="title" color="light" fontFamily="prominent">
+        <Heading
+          as="h2"
+          data-test="title"
+          color="light"
+          fontFamily="arbutus-slap"
+        >
           {title}
         </Heading>
         <Text data-test="subtitle" fontSize={3} color="light">

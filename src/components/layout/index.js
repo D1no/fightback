@@ -38,7 +38,8 @@ const Layout = ({
   debug = false,
   p = 3,
   sectionHeader = <Box>No components assigned.</Box>,
-  sectionTopControl = <Box>No components assigned.</Box>,
+  heroLeft = <Box>No HERO Left assigned.</Box>,
+  heroRight = <Box>No HERO Right assigned.</Box>,
   sectionSidebarControl = <Box>No components assigned.</Box>,
   ...props
 }) => {
@@ -53,29 +54,40 @@ const Layout = ({
       <Section data-test="sectionHeader" {...sectionProps} width={1}>
         {sectionHeader}
       </Section>
-      <Section
-        data-test="sectionTopControl"
-        {...sectionProps}
-        width={[1, 1, 0]}
-        display={[true, false]}
-      >
-        {sectionTopControl}
-      </Section>
-      <Section
-        data-test="sectionContent"
-        {...sectionProps}
-        width={[1, 2 / 3, 1 / 2]}
-      >
-        {props.children}
-      </Section>
-      <Section
-        data-test="sectionSidebarControl"
-        {...sectionProps}
-        width={[0, 1 / 3, 1 / 2]}
-        display={[false, true]}
-      >
-        {sectionSidebarControl}
-      </Section>
+      <>
+        <Section
+          data-test="heroLeft"
+          {...sectionProps}
+          width={[1, 8 / 12, 8 / 12]}
+        >
+          {heroLeft}
+        </Section>
+        <Section
+          data-test="heroRight"
+          {...sectionProps}
+          width={[0, 4 / 12, 4 / 12]}
+          display={[false, true]}
+        >
+          {heroRight}
+        </Section>
+      </>
+      <>
+        <Section
+          data-test="sectionContent"
+          {...sectionProps}
+          width={[1, 8 / 12, 8 / 12]}
+        >
+          {props.children}
+        </Section>
+        <Section
+          data-test="sectionSidebarControl"
+          {...sectionProps}
+          width={[0, 4 / 12, 4 / 12]}
+          display={[false, true]}
+        >
+          {sectionSidebarControl}
+        </Section>
+      </>
     </Flex>
   );
 };

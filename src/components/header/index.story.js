@@ -8,7 +8,7 @@ import Header from "./index";
 storiesOf("Header", module).add("Title Overwrite", () => (
   <Header
     short={text("Short", "CG")}
-    title={text("Title", "Welcome to Coinglaze!")}
+    title={text("Title", "Fightback Summit")}
     subtitle={text("Subtitle", "All crypto pairs in one glaze.")}
   />
 ));

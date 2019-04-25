@@ -9,7 +9,7 @@
   "hosting": [
     {
       "target": "production",
-      "public": "hosting/production_community",
+      "public": "build",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
       "rewrites": [
         {
@@ -30,7 +30,7 @@
     },
     {
       "target": "staging",
-      "public": "hosting/staging_platform",
+      "public": "build",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
       "rewrites": [
         {
