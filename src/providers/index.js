@@ -8,7 +8,7 @@ import { ApolloProvider as ApolloProviderHooks } from "react-apollo-hooks";
 import coinbase from "./coinbase";
 
 const Provider = props => (
-  <ApolloProvider client={coinbase}>
+  <ApolloProvider client={{ coinbase }}>
     <ApolloProviderHooks client={coinbase}>
       {props.children}
     </ApolloProviderHooks>

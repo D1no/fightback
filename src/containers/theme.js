@@ -40,6 +40,8 @@ const lightTheme = {
     gray: "#F6F4F7",
     darkgray: "#86878C",
     red: "#F54949",
+    loading: "#f7f7f7",
+    loadingFail: "#ffc5c9"
   },
   space: [
     0,   // 00
