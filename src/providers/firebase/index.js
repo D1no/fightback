@@ -4,15 +4,8 @@
  */
 // eslint-disable-next-line
 import React, { Component } from "react";
-import fiery from "fiery";
-// Firebase modular import for tree shaking
-import firebase from "firebase/app";
-import "firebase/database";
-
-import config from "./config";
-
-// Initialise Firebase Connection
-export default firebase.initializeApp(config);
+import firebase from "./config";
+import { useFirebaseDatabase } from "./connectorSuspenseHook";
 
 /**
  * Suspense enabled provider for a single key
@@ -20,7 +13,7 @@ export default firebase.initializeApp(config);
  */
 export function SheetsyncElement({ path }) {
   const dataRef = firebase.database().ref(`sheetsync/${path}`);
-  const dataState = fiery.useFirebaseDatabase(dataRef);
+  const dataState = useFirebaseDatabase(dataRef);
 
   return dataState.unstable_read();
 }
@@ -31,7 +24,7 @@ export function SheetsyncElement({ path }) {
  */
 export function SheetsyncListElement({ path, children }) {
   const dataRef = firebase.database().ref(`sheetsync/${path}`);
-  const dataState = fiery.useFirebaseDatabase(dataRef);
+  const dataState = useFirebaseDatabase(dataRef);
 
   return children({ items: dataState.unstable_read() });
 }

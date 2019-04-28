@@ -1,6 +1,11 @@
 /**
  * API Config for Provider
  */
+import firebase from "firebase/app";
+import "firebase/database";
+// Saving bundle size
+// import 'firebase/auth';
+
 const config = {
   apiKey: "AIzaSyBjO163hCIn-3zJYQCCmF9aO40IHxABMcs",
   authDomain: "fightbackplatform.firebaseapp.com",
@@ -10,4 +15,6 @@ const config = {
   messagingSenderId: "139643040486",
 };
 
-export default config;
+firebase.initializeApp(config);
+
+export default firebase;

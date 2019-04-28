@@ -9,20 +9,8 @@
     "not op_mini all"
   ],
   "dependencies": {
-    "apollo-cache-inmemory": "1.5.1",
-    "apollo-client": "2.5.1",
-    "apollo-link": "1.2.11",
-    "apollo-link-rest": "0.7.3",
-    "apollo-link-retry": "2.2.13",
-    "fiery": "^0.5.0",
-    "firebase": "^5.10.1",
-    "graphql": "14.2.1",
-    "graphql-anywhere": "4.2.1",
-    "graphql-tag": "2.10.1",
-    "p-throttle": "3.1.0",
+    "firebase": "5.10.1",
     "react": "16.8.6",
-    "react-apollo": "2.5.5",
-    "react-apollo-hooks": "0.4.5",
     "react-dom": "16.8.6",
     "react-markdown": "^4.0.8",
     "react-scripts": "3.0.0",
@@ -32,6 +20,7 @@
   },
   "scripts": {
     "upgrade-check": "yarn upgrade-interactive --latest",
+    "analyze": "source-map-explorer 'build/static/js/*.js'",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "cypress run",
@@ -86,6 +75,9 @@
     "@storybook/addon-viewport": "5.0.11",
     "@storybook/addons": "5.0.11",
     "@storybook/react": "5.0.11",
+    "@types/node": "^11.13.8",
+    "@types/react": "^16.8.14",
+    "@types/react-dom": "^16.8.4",
     "babel-loader": "8.0.5",
     "babel-plugin-macros": "2.5.1",
     "cypress": "3.2.0",
@@ -96,7 +88,9 @@
     "eslint-plugin-react-hooks": "1.6.0",
     "husky": "2.1.0",
     "lint-staged": "8.1.5",
-    "prettier": "1.17.0"
+    "prettier": "1.17.0",
+    "source-map-explorer": "1.8.0",
+    "typescript": "^3.4.5"
   },
   "husky": {
     "hooks": {
