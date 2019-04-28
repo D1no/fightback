@@ -1,18 +1,16 @@
 import React from "react";
 import styled from "styled-components/macro";
 import { Heading, Flex, Box, Text } from "rebass";
+import { ReactComponent as SvgLogo } from "./logo-black.svg";
 
 // TODO: Make Logo responsive via responsive props
-const Logo = styled(Flex)`
-  border-radius: 100%;
-  height: 42px;
-  width: 42px;
+const Logo = styled(SvgLogo)`
+  // Styling of SVG logo
 `;
 
 // TODO: Make Component View debuggable (background)
 // TODO: Align Logo with badges of cards
 const Header = ({
-  short = "F",
   title = "Fightback Summit",
   subtitle = "Fightback Summit Nr. 3",
 }) => {
@@ -24,21 +22,10 @@ const Header = ({
       justifyContent="center"
       alignItems="center"
     >
-      <Box width={1 / 5}>
-        <Logo
-          mx={4}
-          p={0}
-          alignItems="center"
-          justifyContent="center"
-          fontSize={6}
-          bg="#222"
-        >
-          <Text color="white" fontFamily="arbutus-slap">
-            {short}
-          </Text>
-        </Logo>
+      <Box width={3 / 12}>
+        <Logo mx={4} p={0} />
       </Box>
-      <Box width={4 / 5}>
+      <Box width={9 / 12}>
         <Heading
           as="h2"
           data-test="title"
