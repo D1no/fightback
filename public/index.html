@@ -7,7 +7,10 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
+    <meta name="description"
+          content="Fightback Summit: An exclusive gathering of digital leaders."/>
     <meta name="theme-color" content="#000000" />
+    <title>Fightback Summit</title>
     <!--
       manifest.json provides metadata used when your web app is added to the
       homescreen on Android. See https://developers.google.com/web/fundamentals/web-app-manifest/
@@ -177,7 +180,6 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>Fightback Summit</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to use this website.</noscript>
@@ -224,60 +226,61 @@
   <style>
     @font-face {
       font-family: 'Adelon';
-      font-display: auto; /* or block, swap, fallback, optional */
-      src: url('%PUBLIC_URL%/Adelon-Bold.woff2') format('woff2'),
-      url('%PUBLIC_URL%/Adelon-Bold.woff') format('woff'),
-      url('%PUBLIC_URL%/Adelon-Bold.ttf') format('truetype');
+      font-display: swap; /* or block, swap, fallback, optional */
+      src: url('%PUBLIC_URL%/fonts/Adelon-Bold.woff2') format('woff2'),
+      url('%PUBLIC_URL%/fonts/Adelon-Bold.woff') format('woff'),
+      url('%PUBLIC_URL%/fonts/Adelon-Bold.ttf') format('truetype');
       font-weight: bold;
       font-style: normal;
     }
 
     @font-face {
       font-family: 'Red Ring';
-      font-display: auto; /* or block, swap, fallback, optional */
-      src: url('%PUBLIC_URL%/RedRing-Medium.woff2') format('woff2'),
-      url('%PUBLIC_URL%/RedRing-Medium.woff') format('woff'),
-      url('%PUBLIC_URL%/RedRing-Medium.ttf') format('truetype');
+      font-display: swap; /* or block, swap, fallback, optional */
+      src: url('%PUBLIC_URL%/fonts/RedRing-Medium.woff2') format('woff2'),
+      url('%PUBLIC_URL%/fonts/RedRing-Medium.woff') format('woff'),
+      url('%PUBLIC_URL%/fonts/RedRing-Medium.ttf') format('truetype');
       font-weight: 500;
       font-style: normal;
     }
 
     @font-face {
       font-family: 'Uniform Rounded';
-      font-display: auto; /* or block, swap, fallback, optional */
-      src: url('%PUBLIC_URL%/UniformRounded-Light.woff2') format('woff2'),
-      url('%PUBLIC_URL%/UniformRounded-Light.woff') format('woff'),
-      url('%PUBLIC_URL%/UniformRounded-Light.ttf') format('truetype');
+      font-display: fallback; /* or block, swap, fallback, optional */
+      src: url('%PUBLIC_URL%/fonts/UniformRounded-Light.woff2') format('woff2'),
+      url('%PUBLIC_URL%/fonts/UniformRounded-Light.woff') format('woff'),
+      url('%PUBLIC_URL%/fonts/UniformRounded-Light.ttf') format('truetype');
       font-weight: 300;
       font-style: normal;
     }
 
     @font-face {
       font-family: 'Uniform Rounded';
-      font-display: auto; /* or block, swap, fallback, optional */
-      src: url('%PUBLIC_URL%/UniformRounded-Bold.woff2') format('woff2'),
-      url('%PUBLIC_URL%/UniformRounded-Bold.woff') format('woff'),
-      url('%PUBLIC_URL%/UniformRounded-Bold.ttf') format('truetype');
+      font-display: fallback; /* or block, swap, fallback, optional */
+      src: url('%PUBLIC_URL%/fonts/UniformRounded-Bold.woff2') format('woff2'),
+      url('%PUBLIC_URL%/fonts/UniformRounded-Bold.woff') format('woff'),
+      url('%PUBLIC_URL%/fonts/UniformRounded-Bold.ttf') format('truetype');
       font-weight: bold;
       font-style: normal;
     }
 
     @font-face {
       font-family: 'Uniform Rounded';
-      font-display: auto; /* or block, swap, fallback, optional */
-      src: url('%PUBLIC_URL%/UniformRounded-Medium.woff2') format('woff2'),
-      url('%PUBLIC_URL%/UniformRounded-Medium.woff') format('woff'),
-      url('%PUBLIC_URL%/UniformRounded-Medium.ttf') format('truetype');
+      font-display: fallback; /* or block, swap, fallback, optional */
+      src: url('%PUBLIC_URL%/fonts/UniformRounded-Medium.woff2') format('woff2'),
+      url('%PUBLIC_URL%/fonts/UniformRounded-Medium.woff') format('woff'),
+      url('%PUBLIC_URL%/fonts/UniformRounded-Medium.ttf') format('truetype');
       font-weight: 500;
       font-style: normal;
     }
 
     @font-face {
       font-family: 'Uniform Rounded';
-      font-display: auto; /* or block, swap, fallback, optional */
-      src: url('%PUBLIC_URL%/UniformRounded-Regular.woff2') format('woff2'),
-      url('%PUBLIC_URL%/UniformRounded-Regular.woff') format('woff'),
-      url('%PUBLIC_URL%/UniformRounded-Regular.ttf') format('truetype');
+      font-display: fallback; /* or block, swap, fallback, optional */
+      src: url('%PUBLIC_URL%/fonts/UniformRounded-Regular.woff2')
+      format('woff2'),
+      url('%PUBLIC_URL%/fonts/UniformRounded-Regular.woff') format('woff'),
+      url('%PUBLIC_URL%/fonts/UniformRounded-Regular.ttf') format('truetype');
       font-weight: normal;
       font-style: normal;
     }
