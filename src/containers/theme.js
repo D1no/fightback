@@ -22,14 +22,13 @@ const lightTheme = {
   fontSizes: [
     6,   // 00
     8,   // 01
-    10,  // 02
-    12,  // 03
-    16,  // 04
-    20,  // 05
+    12,  // 02
+    16,  // 03
+    18,  // 04
     24,  // 06
     32,  // 07
     48,  // 08
-    64,  // 09
+    58,  // 09
   ],
   colors: {
     // Main
@@ -73,8 +72,9 @@ const lightTheme = {
     black: 900,
   },
   fonts: {
-    prominent: '"Jua","Roboto","Helvetica Neue",sans-serif',
-    main: '"Roboto","Helvetica Neue",sans-serif',
+    accent: '"Adelon","Helvetica Neue",sans-serif',
+    prominent: '"Red Ring","Helvetica Neue",sans-serif',
+    main: '"Uniform Rounded","Helvetica Neue",sans-serif',
   },
   shadows: {
     card: "0 0 8px 0 rgba(13,18,26,0.19)",
@@ -103,6 +103,8 @@ const GlobalPageStyle = createGlobalStyle`
   body {
     font-family: ${themeGet("fonts.main")};
     font-weight: ${themeGet("fontWeights.main")};
+    line-height: 1.33;
+    font-size: 18px;
     color: ${themeGet("colors.black")};
     background-size: cover;
     background: linear-gradient(-180deg, #FFFFFF 0%, #F7F6F8 67%, #EAE4F7 100%) no-repeat center center fixed;

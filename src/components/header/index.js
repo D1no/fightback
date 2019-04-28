@@ -26,12 +26,7 @@ const Header = ({
         <Logo mx={4} p={0} />
       </Box>
       <Box width={9 / 12}>
-        <Heading
-          as="h2"
-          data-test="title"
-          color="light"
-          fontFamily="arbutus-slap"
-        >
+        <Heading as="h2" data-test="title" color="light" fontFamily="accent">
           {title}
         </Heading>
         <Text data-test="subtitle" fontSize={3} color="light">
