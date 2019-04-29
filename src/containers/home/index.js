@@ -26,10 +26,7 @@ function Home(props) {
         <Layout
           debug={false}
           sectionHeader={
-            <Header
-              title={<SheetsyncLine path={"static/event/pagename"} />}
-              subtitle={<SheetsyncLine path={"static/event/hook"} />}
-            />
+            <Header title={<SheetsyncLine path={"static/event/pagename"} />} />
           }
           sectionTopControl={<HeadSelect />}
           sectionSidebarControl={

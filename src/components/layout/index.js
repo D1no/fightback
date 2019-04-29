@@ -2,6 +2,7 @@ import React from "react";
 import { Box, Flex } from "rebass";
 import styled, { css } from "styled-components/macro";
 import { style } from "styled-system";
+import { ReactComponent as CenterHookSVG } from "./center-hook.svg";
 
 /**
  * A custom render prop for responsively displaying sections
@@ -60,16 +61,14 @@ const Layout = ({
           {...sectionProps}
           width={[1, 8 / 12, 8 / 12]}
         >
-          {heroLeft}
+          <CenterHookSVG style={{ height: "inherit", width: "inherit" }} />
         </Section>
         <Section
           data-test="heroRight"
           {...sectionProps}
           width={[0, 4 / 12, 4 / 12]}
           display={[false, true]}
-        >
-          {heroRight}
-        </Section>
+        />
       </>
       <>
         <Section
@@ -84,7 +83,10 @@ const Layout = ({
           {...sectionProps}
           width={[0, 4 / 12, 4 / 12]}
           display={[false, true]}
+          style={{ flexDirection: "column" }}
         >
+          {heroRight}
+          {heroLeft}
           {sectionSidebarControl}
         </Section>
       </>

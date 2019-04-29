@@ -10,28 +10,22 @@ const Logo = styled(SvgLogo)`
 
 // TODO: Make Component View debuggable (background)
 // TODO: Align Logo with badges of cards
-const Header = ({
-  title = "Fightback Summit",
-  subtitle = "Fightback Summit Nr. 3",
-}) => {
+const Header = ({ title = "Fightback Summit" }) => {
   return (
     <Flex
-      py={6}
-      px={8}
+      py={[6, 8]}
+      px={[4, 6]}
       flexWrap="wrap"
       justifyContent="center"
       alignItems="center"
     >
-      <Box width={3 / 12}>
-        <Logo mx={4} p={0} />
+      <Box width={[7 / 12, 4 / 12]}>
+        <Logo mx={3} p={0} />
       </Box>
-      <Box width={9 / 12}>
-        <Heading as="h2" data-test="title" color="light" fontFamily="accent">
+      <Box width={[5 / 12, 8 / 12]}>
+        <Heading as="h2" data-test="title" color="light">
           {title}
         </Heading>
-        <Text data-test="subtitle" fontSize={3} color="light">
-          {subtitle}
-        </Text>
       </Box>
     </Flex>
   );

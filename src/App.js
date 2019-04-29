@@ -4,6 +4,12 @@ import Theme from "containers/theme";
 import Provider from "providers";
 import Home from "containers/home";
 
+let delay = 1500;
+
+if (process.env.NODE_ENV === "development") {
+  delay = 0;
+}
+
 class App extends Component {
   render() {
     return (
@@ -17,7 +23,7 @@ class App extends Component {
 
   // ToDo This needs to come from suspense. Using this: https://codesandbox.io/s/6l65nq9k3n
   loadingpromise() {
-    return new Promise(resolve => setTimeout(resolve, 1500));
+    return new Promise(resolve => setTimeout(resolve, delay));
   }
 
   componentDidMount() {
