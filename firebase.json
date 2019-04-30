@@ -45,6 +45,15 @@
           ]
         },
         {
+          "source": "/media/**/*",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "max-age=31536000"
+            }
+          ]
+        },
+        {
           "source": "**/*.chunk.js",
           "headers": [
             {
@@ -94,6 +103,15 @@
         },
         {
           "source": "/fonts/**/*",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "max-age=31536000"
+            }
+          ]
+        },
+        {
+          "source": "/media/**/*",
           "headers": [
             {
               "key": "Cache-Control",
