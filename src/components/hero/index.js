@@ -63,7 +63,7 @@ const Hero = ({
           Banner Location. Should be extracted into own component.
         */}
         <Flex justifyContent="space-between" flexWrap="wrap">
-          <Box pr={7} width={[12 / 12, 9 / 12, 8 / 12]}>
+          <Box pr={7} py={[5, 0]} width={[12 / 12, 9 / 12, 8 / 12]}>
             <Hook width={1} />
           </Box>
           <Box pl={7} alignSelf="flex-end" flex="1">
