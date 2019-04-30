@@ -5,7 +5,7 @@
 // @ts-check
 
 import React from "react";
-import Layout from "./index";
+import Hero from "./index";
 import Theme from "./../../containers/theme";
 
 /**
@@ -20,7 +20,7 @@ describe("Layout Component", () => {
     cy.mount(
       <>
         <Theme>
-          <Layout debug={true}>This is the main content area.</Layout>
+          <Hero debug={true}>This is the main content area.</Hero>
         </Theme>
       </>
     );

@@ -1,14 +1,10 @@
 import React from "react";
 
 import { storiesOf } from "@storybook/react";
-import { text } from "@storybook/addon-knobs";
+import { boolean, text } from "@storybook/addon-knobs";
 
 import Header from "./index";
 
 storiesOf("Header", module).add("Title Overwrite", () => (
-  <Header
-    short={text("Short", "CG")}
-    title={text("Title", "Fightback Summit")}
-    subtitle={text("Subtitle", "All crypto pairs in one glaze.")}
-  />
+  <Header debug={boolean("Debug View", true)} />
 ));

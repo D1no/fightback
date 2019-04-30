@@ -3,32 +3,15 @@ import { Box, Flex } from "rebass";
 import styled, { css } from "styled-components/macro";
 import { style } from "styled-system";
 import { ReactComponent as CenterHookSVG } from "./center-hook.svg";
-
-/**
- * A custom render prop for responsively displaying sections
- * according to theme breakpoints.
- * Note: https://github.com/jxnblk/styled-system/blob/master/docs/api.md#style
- * Note2: Conditional render is better for performance but more complex.
- */
-const responsiveDisplay = style({
-  prop: "display",
-  cssProperty: "display",
-  transformValue: bol => (!bol ? "none" : "inherit"),
-});
+import { responsiveDisplayProp, debuggableViewProp } from "containers/theme";
 
 /**
  * Section style composition incl. a debug view for flexbox
  * behaviors.
  */
 const Section = styled(Box)`
-  ${responsiveDisplay}
-
-  ${props =>
-    // Random background color when debugging view
-    props.debug &&
-    css`
-      background-color: rgb(${Math.random() * 255}, 162, 254);
-    `}
+  ${responsiveDisplayProp}
+  ${props => debuggableViewProp(props)}
 `;
 
 /**

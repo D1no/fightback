@@ -1,33 +1,102 @@
 import React from "react";
 import styled from "styled-components/macro";
-import { Heading, Flex, Box, Text } from "rebass";
-import { ReactComponent as SvgLogo } from "./logo-black.svg";
+import { Flex, Box, Link } from "rebass";
 
-// TODO: Make Logo responsive via responsive props
-const Logo = styled(SvgLogo)`
-  // Styling of SVG logo
+import { responsiveDisplayProp, debuggableViewProp } from "containers/theme";
+import Logo from "./logo";
+import Icon from "./icon";
+
+const HeaderWrapper = styled(Flex)`
+  ${props => debuggableViewProp(props)}
 `;
 
-// TODO: Make Component View debuggable (background)
-// TODO: Align Logo with badges of cards
-const Header = ({ title = "Fightback Summit" }) => {
+const LogoWrapper = styled(Box)`
+  ${props => debuggableViewProp(props)}
+`;
+
+const MobileMenu = styled(Box)`
+  ${responsiveDisplayProp}
+  ${props => debuggableViewProp(props)}
+`;
+
+const RightDecor = styled(Box)`
+  ${responsiveDisplayProp}
+`;
+
+const Navigation = styled(Flex)`
+  ${responsiveDisplayProp}
+  ${props => debuggableViewProp(props)}
+`;
+
+const NavLink = props => (
+  <Link
+    px={2}
+    pt={2}
+    pb={1}
+    color="inherit"
+    fontSize={2}
+    {...props}
+    css={{
+      display: "block",
+      fontWeight: "bold",
+      textDecoration: "none",
+    }}
+  />
+);
+
+const Header = ({ debug = false }) => {
+  let sectionProps = {
+    debug,
+  };
+
   return (
-    <Flex
-      py={[6, 8]}
-      px={[4, 6]}
-      flexWrap="wrap"
-      justifyContent="center"
-      alignItems="center"
+    <HeaderWrapper
+      flexWrap="nowrap"
+      justifyContent="space-between"
+      ml={3}
+      mr={2}
+      mt={6}
+      mb={6}
+      debug={debug}
     >
-      <Box width={[7 / 12, 4 / 12]}>
-        <Logo mx={3} p={0} />
-      </Box>
-      <Box width={[5 / 12, 8 / 12]}>
-        <Heading as="h2" data-test="title" color="light">
-          {title}
-        </Heading>
-      </Box>
-    </Flex>
+      <LogoWrapper alignSelf="center" pr={5} debug={debug}>
+        <Logo debug={debug} width={140} {...sectionProps} />
+      </LogoWrapper>
+      <MobileMenu
+        py={4}
+        pr={3}
+        pl={5}
+        display={[true, false]}
+        alignSelf="center"
+        debug={debug}
+      >
+        <Icon />
+      </MobileMenu>
+      <Navigation
+        py={4}
+        pr={3}
+        pl={5}
+        display={[false, true]}
+        alignSelf="center"
+        justifyContent="space-around"
+        flex="1"
+        debug={debug}
+      >
+        <Box>
+          <NavLink href="#">about</NavLink>
+          <NavLink href="#">attendance</NavLink>
+        </Box>
+        <Box>
+          <NavLink href="#">what to expect</NavLink>
+          <NavLink href="#">agenda // sessions</NavLink>
+        </Box>
+        <Box>
+          <NavLink href="#">speakers</NavLink>
+          <NavLink href="#">participate</NavLink>
+        </Box>
+      </Navigation>
+      <RightDecor width={[0, 1 / 12, 2 / 12]} display={[false, true]} />
+    </HeaderWrapper>
   );
 };
 

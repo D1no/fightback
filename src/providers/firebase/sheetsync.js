@@ -5,7 +5,7 @@ import {
   SheetsyncListElement,
   SheetsyncError,
 } from "./index";
-import { LineSkeleton, ListSkeleton } from "components/skeleton";
+import { LineSkeleton, ListSkeleton } from "components/loadingSkeleton";
 
 // ToDo Animate Updates pushed from firebase (too quick for a suspense)
 
