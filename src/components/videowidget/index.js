@@ -33,7 +33,14 @@ const VideoWidget = props => (
   <VideoMask width={1} py={8}>
     <Link href="https://www.youtube.com/watch?v=iuG5lgNDjbk" target="_blank">
       <Overlay p={0} m={0}>
-        <video id="background-video" loop autoPlay muted width="100%">
+        <video
+          id="background-video"
+          loop
+          autoPlay
+          muted
+          playsInline
+          width="100%"
+        >
           <source
             src="/media/co-creation-2018-teaser-no-sound.01.mp4"
             type="video/mp4"
