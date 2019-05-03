@@ -11,12 +11,17 @@ import Hero from "components/hero";
 import Wrapper from "components/wrapper";
 import { SheetsyncLine, SheetsyncList } from "providers/firebase/sheetsync";
 
+let HIDE_IN_PROD = true;
+if (process.env.NODE_ENV === "development") {
+  HIDE_IN_PROD = false;
+}
+
 function Home(props) {
   return (
     <Suspense fallback={<h4>Loading...</h4>}>
       <Wrapper>
         <Hero
-          top={<Header />}
+          top={<Header hideMenu={HIDE_IN_PROD} />}
           middleStretch={
             <>
               <SheetsyncLine path={"static/event/time"} />
