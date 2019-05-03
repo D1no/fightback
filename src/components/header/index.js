@@ -44,7 +44,7 @@ const NavLink = props => (
   />
 );
 
-const Header = ({ debug = false }) => {
+const Header = ({ debug = false, hideMenu = false }) => {
   let sectionProps = {
     debug,
   };
@@ -66,7 +66,7 @@ const Header = ({ debug = false }) => {
         py={4}
         pr={3}
         pl={5}
-        display={[true, false]}
+        display={!hideMenu && [true, false]}
         alignSelf="center"
         debug={debug}
       >
@@ -76,7 +76,7 @@ const Header = ({ debug = false }) => {
         py={4}
         pr={3}
         pl={5}
-        display={[false, true]}
+        display={!hideMenu && [false, true]}
         alignSelf="center"
         justifyContent="space-around"
         flex="1"

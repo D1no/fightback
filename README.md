@@ -1,3 +1,5 @@
+This repo uses [gitmoji.com](https://github.com/shoplinksys/gitmoji) 🔺
+
 ## Fightback Platfom and Website
 This is a fork of https://github.com/d1no/coinglaze and adapted to serve the http://fightback.community website via firebase and a content sync of google sheet via an appscript module.
  - Production: http://fightback.community or http://admin.fightback.community 
