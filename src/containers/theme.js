@@ -15,9 +15,18 @@ import { ThemeProvider, createGlobalStyle, css } from "styled-components/macro";
 const lightTheme = {
   maxWidth: "1110px",
   breakpoints: [
-    "40em", // 00
-    "52em", // 01
-    "64em", // 02
+    "48em", // 01 - iPad portrait and up
+    "85em", // 02 - most popular desktop and up
+    "118.75em", // 03 - full hd and up
+  ],
+  lineHeights: [
+    '11px', // 00
+    '16px', // 01
+    '18px', // 02
+    '21px', // 03
+    '24px', // 04
+    '32px', // 05
+    '42px', // 06
   ],
   fontSizes: [
     8,   // 00
@@ -25,10 +34,10 @@ const lightTheme = {
     14,  // 02
     16,  // 03
     18,  // 04
-    24,  // 06
-    32,  // 07
-    48,  // 08
-    58,  // 09
+    24,  // 05
+    32,  // 06
+    48,  // 07
+    58,  // 08
   ],
   colors: {
     // Main
@@ -82,6 +91,11 @@ const lightTheme = {
     large: "0 0 24px 0 rgba(13,18,26,0.19)",
   },
 };
+
+// aliases
+lightTheme.breakpoints.md = lightTheme.breakpoints[0];
+lightTheme.breakpoints.xl = lightTheme.breakpoints[1];
+lightTheme.breakpoints.xxl = lightTheme.breakpoints[2];
 
 /**=============================================================================
 
@@ -158,8 +172,6 @@ const GlobalPageStyle = createGlobalStyle`
     line-height: 1.5; // 27px
     font-size: 18px;
     color: ${themeGet("colors.black")};
-    background-size: cover;
-    background: linear-gradient(-180deg, #FFFFFF 0%, #F7F6F8 67%, #EAE4F7 100%) no-repeat center center fixed;
   }
   
   p {
@@ -256,6 +268,10 @@ const GlobalResetStyle = createGlobalStyle`
   
   a {
     background-color: transparent;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
   }
   
   /**

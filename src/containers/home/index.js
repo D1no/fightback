@@ -3,7 +3,7 @@
  */
 import React, { Suspense } from "react";
 import ReactMarkdown from "react-markdown";
-import { Link } from "rebass";
+import { Link, Text } from "rebass";
 
 import Header from "components/header";
 import Hero from "components/hero";
@@ -21,18 +21,22 @@ function Home(props) {
       <Wrapper>
         <Hero
           top={<Header hideMenu={HIDE_IN_PROD} />}
-          middleStretch={
+          middleStretch={[
             <>
               <SheetsyncLine path={"static/event/time"} />
-              <SheetsyncLine mb={[4, 10]} path={"static/event/date"} />
-              <SheetsyncLine mb={[3, 9]} path={"static/event/hook"} />
+              <SheetsyncLine path={"static/event/date"} />
+            </>,
+            <>
+              <Text fontWeight="bold">
+                <SheetsyncLine path={"static/event/hook"} />
+              </Text>
               <SheetsyncLine path={"static/event/email"}>
                 {({ data }) => {
                   return <Link href={`mailto:${data}`}>{data}</Link>;
                 }}
               </SheetsyncLine>
-            </>
-          }
+            </>,
+          ]}
         >
           <SheetsyncLine path={"static/event/summary"} />
         </Hero>

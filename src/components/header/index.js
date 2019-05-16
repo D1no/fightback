@@ -34,6 +34,7 @@ const StyledNavLink = styled(Link)`
   text-decoration: none;
   :hover {
     color: ${props => props.theme.colors.blue};
+    text-decoration: none;
   }
 `;
 
@@ -53,7 +54,6 @@ const Header = ({ debug = false, hideMenu = false }) => {
       ml={3}
       mr={2}
       mt={6}
-      mb={6}
       debug={debug}
     >
       <LogoWrapper alignSelf="center" pr={5} debug={debug}>

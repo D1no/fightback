@@ -30,7 +30,7 @@ const Overlay = styled(Box)`
 `;
 
 const VideoWidget = props => (
-  <VideoMask width={1} py={8}>
+  <VideoMask width={1}>
     <Link href="https://www.youtube.com/watch?v=iuG5lgNDjbk" target="_blank">
       <Overlay p={0} m={0}>
         <video
