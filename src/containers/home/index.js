@@ -1,11 +1,10 @@
 /**
  * Main page of the app
  */
-import React, { Suspense, useState } from "react";
-import { Box } from "rebass";
+import React, { Suspense } from "react";
 import ReactMarkdown from "react-markdown";
+import { Link } from "rebass";
 
-import Layout from "components/layout";
 import Header from "components/header";
 import Hero from "components/hero";
 import Wrapper from "components/wrapper";
@@ -25,7 +24,13 @@ function Home(props) {
           middleStretch={
             <>
               <SheetsyncLine path={"static/event/time"} />
-              <SheetsyncLine path={"static/event/date"} />
+              <SheetsyncLine mb={[4, 10]} path={"static/event/date"} />
+              <SheetsyncLine mb={[3, 9]} path={"static/event/hook"} />
+              <SheetsyncLine path={"static/event/email"}>
+                {({ data }) => {
+                  return <Link href={`mailto:${data}`}>{data}</Link>;
+                }}
+              </SheetsyncLine>
             </>
           }
         >

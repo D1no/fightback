@@ -52,7 +52,6 @@ const Hero = ({
     <FullHeightWrapper
       flexWrap="nowrap"
       flexDirection="column"
-      justifyContent="space-between"
       debug={sectionProps.debug}
     >
       <Top flex="" data-test="heroTop" {...sectionProps}>
@@ -63,13 +62,17 @@ const Hero = ({
           Banner Location. Should be extracted into own component.
         */}
         <Flex justifyContent="space-between" flexWrap="wrap">
-          <Box pr={7} py={[5, 0]} width={[12 / 12, 9 / 12, 8 / 12]}>
-            <Hook width={1} />
+          <Box
+            pr={[7, 7]}
+            pl={[5, 7]}
+            pt={[0, 6]}
+            pb={[4, 6]}
+            width={[12 / 12, 9 / 12, 8 / 12]}
+          >
+            <Hook width={1} mx={[0, -12]} />
           </Box>
-          <Box pl={7} alignSelf="flex-end" flex="1">
-            <EventText fontWeight="bold" fontSize={2}>
-              {middleStretch}
-            </EventText>
+          <Box pl={6} alignSelf="flex-end" flex="1">
+            <EventText fontSize={3}>{middleStretch}</EventText>
           </Box>
         </Flex>
         {/*
