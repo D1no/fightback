@@ -95,28 +95,31 @@ function getArrayCollection(collection: string) {
   let arrayFragment = [];
   let keys = [];
 
-  let content = ss.getSheetByName(collection).getDataRange().getValues();
+  let content = ss
+    .getSheetByName(collection)
+    .getDataRange()
+    .getValues();
 
   content[0].forEach(column => {
     keys.push(column);
-  })
+  });
 
   for (let i = 1; i < content.length; i++) {
-    let row = content[i]
-    let tuple = {}
+    let row = content[i];
+    let tuple = {};
 
     for (let j = 0; j < keys.length; j++) {
-      let key = keys[j]
+      let key = keys[j];
       key = key.toString();
-      let value = row[j]
+      let value = row[j];
       value = value.toString();
 
-      if(value != "") {
+      if (value != "") {
         tuple[key] = value;
       }
     }
 
-    arrayFragment.push(tuple)
+    arrayFragment.push(tuple);
   }
 
   return arrayFragment;
@@ -131,7 +134,7 @@ function getPayload() {
     created: new Date(),
     static: getCollection("static"),
     sessions: getArrayCollection("sessions"),
-    speakers: getArrayCollection("speakers")
+    speakers: getArrayCollection("speakers"),
   };
 
   return payload;
@@ -149,9 +152,9 @@ function updateFirebaseCollection() {
     method: "put",
     headers: {
       "Content-type": "application/json",
-      Authorization: "Bearer " + ScriptApp.getOAuthToken()
+      Authorization: "Bearer " + ScriptApp.getOAuthToken(),
     },
-    payload: JSON.stringify(getPayload())
+    payload: JSON.stringify(getPayload()),
   });
 
   console.log("Execute Firebase Put Request", response.getContentText());
