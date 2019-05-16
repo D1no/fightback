@@ -28,23 +28,20 @@ const Navigation = styled(Flex)`
   ${props => debuggableViewProp(props)}
 `;
 
+const StyledNavLink = styled(Link)`
+  display: block;
+  font-weight: bold;
+  text-decoration: none;
+  :hover {
+    color: ${props => props.theme.colors.blue};
+  }
+`;
+
 const NavLink = props => (
-  <Link
-    px={2}
-    pt={2}
-    pb={1}
-    color="inherit"
-    fontSize={2}
-    {...props}
-    css={{
-      display: "block",
-      fontWeight: "bold",
-      textDecoration: "none",
-    }}
-  />
+  <StyledNavLink px={2} pt={2} pb={1} color="inherit" fontSize={2} {...props} />
 );
 
-const Header = ({ debug = false }) => {
+const Header = ({ debug = false, hideMenu = false }) => {
   let sectionProps = {
     debug,
   };
@@ -66,7 +63,7 @@ const Header = ({ debug = false }) => {
         py={4}
         pr={3}
         pl={5}
-        display={[true, false]}
+        display={!hideMenu && [true, false]}
         alignSelf="center"
         debug={debug}
       >
@@ -76,7 +73,7 @@ const Header = ({ debug = false }) => {
         py={4}
         pr={3}
         pl={5}
-        display={[false, true]}
+        display={!hideMenu && [false, true]}
         alignSelf="center"
         justifyContent="space-around"
         flex="1"

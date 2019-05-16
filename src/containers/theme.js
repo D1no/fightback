@@ -21,7 +21,7 @@ const lightTheme = {
   ],
   fontSizes: [
     8,   // 00
-    12,   // 01
+    12,  // 01
     14,  // 02
     16,  // 03
     18,  // 04
@@ -40,7 +40,8 @@ const lightTheme = {
     darkgray: "#86878C",
     red: "#F54949",
     loading: "#f7f7f7",
-    loadingFail: "#ffc5c9"
+    loadingFail: "#ffc5c9",
+    blue: "#1D7DEA"
   },
   space: [
     0,   // 00
