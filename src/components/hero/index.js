@@ -98,6 +98,12 @@ const Hero = ({
     debug,
   };
 
+  const videoProps = {
+    videoLink: "https://www.youtube.com/watch?v=iuG5lgNDjbk",
+    videoSrc: "/media/co-creation-2018-teaser-no-sound.01.mp4",
+    text: "Impressions from October 2018",
+  };
+
   return (
     <FullHeightWrapper
       flexWrap="nowrap"
@@ -153,7 +159,7 @@ const Hero = ({
           pb={[4, 4, 4, 9]}
         >
           <VideoWrapper width={[12 / 12, 8 / 12]} px={[0, 8]}>
-            <VideoWidget />
+            <VideoWidget {...videoProps} />
           </VideoWrapper>
           <Description
             pl={[6, 0, 6]}
