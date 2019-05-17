@@ -47,7 +47,7 @@ const EventText = styled(Text)`
 `;
 
 const StretchWrapper = styled(Flex)`
-  @media (min-width: ${props => props.theme.breakpoints[1]}) {
+  @media (min-width: ${props => props.theme.breakpoints[0]}) {
     height: 60%;
   }
 
