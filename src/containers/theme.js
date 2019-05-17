@@ -191,6 +191,11 @@ const GlobalResetStyle = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
   }
   
+  #root {
+    overflow: hidden;
+    width: 100%;
+  }
+  
   /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
   /* Document

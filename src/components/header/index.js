@@ -7,6 +7,7 @@ import Logo from "./logo";
 import Icon from "./icon";
 
 const HeaderWrapper = styled(Flex)`
+  position: relative;
   ${props => debuggableViewProp(props)}
 `;
 
@@ -17,10 +18,6 @@ const LogoWrapper = styled(Box)`
 const MobileMenu = styled(Box)`
   ${responsiveDisplayProp}
   ${props => debuggableViewProp(props)}
-`;
-
-const RightDecor = styled(Box)`
-  ${responsiveDisplayProp}
 `;
 
 const Navigation = styled(Flex)`
@@ -38,6 +35,18 @@ const StyledNavLink = styled(Link)`
   }
 `;
 
+const RightDecor = styled(Box)`
+  position: absolute;
+  left: 100%;
+  top: 0;
+  width: 415px;
+  height: 100px;
+  background-size: auto 112px;
+  background-position: 0 100%;
+  background-image: url("/images/accent.png");
+  ${responsiveDisplayProp};
+`;
+
 const NavLink = props => (
   <StyledNavLink px={2} pt={2} pb={1} color="inherit" fontSize={2} {...props} />
 );
@@ -51,9 +60,9 @@ const Header = ({ debug = false, hideMenu = false }) => {
     <HeaderWrapper
       flexWrap="nowrap"
       justifyContent="space-between"
-      ml={3}
-      mr={2}
-      mt={6}
+      pl={3}
+      pr={2}
+      pt={6}
       debug={debug}
     >
       <LogoWrapper alignSelf="center" pr={5} debug={debug}>
@@ -92,7 +101,7 @@ const Header = ({ debug = false, hideMenu = false }) => {
           <NavLink href="#">participate</NavLink>
         </Box>
       </Navigation>
-      <RightDecor width={[0, 1 / 12, 2 / 12]} display={[false, true]} />
+      <RightDecor display={[false, false, true]} ml={-10} />
     </HeaderWrapper>
   );
 };
