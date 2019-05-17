@@ -90,6 +90,9 @@ const lightTheme = {
     small: "0 0 4px 0 rgba(13,18,26,0.19)",
     large: "0 0 24px 0 rgba(13,18,26,0.19)",
   },
+  gradients: {
+    lightBlue: "linear-gradient(135deg, #35a8fb 0%, #227af0 100%)"
+  }
 };
 
 // aliases
@@ -176,7 +179,7 @@ const GlobalPageStyle = createGlobalStyle`
   
   p {
     margin-block-start: 0em;
-    margin-block-end: 1.5em;
+    margin-block-end: 0em;
   }
 `;
 
