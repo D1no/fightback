@@ -14,6 +14,7 @@ import SideText from "components/sideText";
 import NoteText from "components/noteText";
 import MarkdownText from "components/markdownText";
 import Signature from "components/signature";
+import Footer from "containers/footer";
 import { SheetsyncLine, SheetsyncList } from "providers/firebase/sheetsync";
 
 let HIDE_IN_PROD = true;
@@ -156,8 +157,7 @@ function Home(props) {
             )}
           </SheetsyncList>
         </ContentContainer>
-        <SheetsyncLine path={"static/footer/copyright"} />
-        <SheetsyncLine path={"static/event/email"} />
+        <Footer />
       </Wrapper>
     </Suspense>
   );

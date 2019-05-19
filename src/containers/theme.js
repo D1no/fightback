@@ -52,6 +52,7 @@ const lightTheme = {
     loadingFail: "#ffc5c9",
     blue: "#1D7DEA"
   },
+  backgroundColor: "#fff",
   space: [
     0,   // 00
     3,   // 01
