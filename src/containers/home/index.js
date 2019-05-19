@@ -3,7 +3,7 @@
  */
 import React, { Suspense } from "react";
 import styled from "styled-components/macro";
-import { Link, Text, Box } from "rebass";
+import { Link, Text, Box, Flex } from "rebass";
 
 import Header from "components/header";
 import Hero from "components/hero";
@@ -11,6 +11,7 @@ import Wrapper from "components/wrapper";
 import ContentContainer from "components/contentContainer";
 import Title from "components/title";
 import SideText from "components/sideText";
+import NoteText from "components/noteText";
 import MarkdownText from "components/markdownText";
 import Signature from "components/signature";
 import { SheetsyncLine, SheetsyncList } from "providers/firebase/sheetsync";
@@ -49,10 +50,11 @@ function Home(props) {
           <SheetsyncLine path={"static/event/summary"} />
         </Hero>
       </Wrapper>
-      <ParallaxPlaceholder my={10} />
+      <ParallaxPlaceholder my={9} />
       <Wrapper>
         <ContentContainer
           title="about"
+          id="about"
           aside={
             <SheetsyncLine path={"static/about/panelmarkdown"}>
               {({ data }) => (
@@ -84,14 +86,76 @@ function Home(props) {
             </SheetsyncLine>
           </Box>
         </ContentContainer>
-        <SheetsyncList path={"sessions"}>
-          {({ item, index }) => (
-            <div key={index}>
-              <h3>{item.title}</h3>
-              <MarkdownText source={item.markdown} />
-            </div>
-          )}
-        </SheetsyncList>
+        <ContentContainer
+          title="attendance"
+          id="attendance"
+          aside={
+            <SheetsyncLine path={"static/attendance/panelmarkdown"}>
+              {({ data }) => (
+                <SideText>
+                  <MarkdownText source={data} />
+                </SideText>
+              )}
+            </SheetsyncLine>
+          }
+        >
+          <Flex flexWrap="wrap">
+            <SheetsyncList path={"static/attendance"}>
+              {({ item, index }) => {
+                const { title, markdown } = item;
+
+                if (!(title, markdown)) {
+                  return null;
+                }
+
+                return (
+                  <Box key={index} width={[12 / 12, 6 / 12]} mb={5}>
+                    <Title>{title}</Title>
+                    <Box ml={[0, 6]}>
+                      <Text fontWeight="light">
+                        <MarkdownText source={markdown} />
+                      </Text>
+                    </Box>
+                  </Box>
+                );
+              }}
+            </SheetsyncList>
+          </Flex>
+        </ContentContainer>
+      </Wrapper>
+      <ParallaxPlaceholder my={9} />
+      <Wrapper>
+        <ContentContainer
+          title="agenda // sessions"
+          id="agenda"
+          aside={
+            <SheetsyncLine path={"static/agenda/panelmarkdown"}>
+              {({ data }) => (
+                <SideText>
+                  <MarkdownText source={data} />
+                </SideText>
+              )}
+            </SheetsyncLine>
+          }
+          header={
+            <SheetsyncLine path={"static/agenda/warning"}>
+              {({ data }) => <NoteText mb={5}>{data}</NoteText>}
+            </SheetsyncLine>
+          }
+        >
+          <SheetsyncList path={"sessions"}>
+            {({ item, index }) => (
+              <Box key={index} mb={4}>
+                <Title>{item.title}</Title>
+                <Box ml={[0, 6]}>
+                  <Text fontWeight="light">
+                    <MarkdownText source={item.markdown} />
+                  </Text>
+                </Box>
+              </Box>
+            )}
+          </SheetsyncList>
+        </ContentContainer>
         <SheetsyncLine path={"static/footer/copyright"} />
         <SheetsyncLine path={"static/event/email"} />
       </Wrapper>
