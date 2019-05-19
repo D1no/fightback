@@ -50,7 +50,20 @@ export function SheetsyncList({ path, children }) {
     >
       <Suspense fallback={<ListSkeleton loading> Loading </ListSkeleton>}>
         <SheetsyncListElement path={path}>
-          {({ items }) => items.map((item, index) => children({ item, index }))}
+          {({ items }) => {
+            if (
+              !(items && (Array.isArray(items) || typeof items === "object"))
+            ) {
+              console.error("SheetsyncList received unsupported data format.");
+              return [];
+            }
+
+            const itemsArr = Array.isArray(items)
+              ? items
+              : Object.keys(items).map(item => items[item]);
+
+            return itemsArr.map((item, index) => children({ item, index }));
+          }}
         </SheetsyncListElement>
       </Suspense>
     </SheetsyncError>
