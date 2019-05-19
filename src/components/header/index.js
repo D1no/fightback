@@ -61,7 +61,7 @@ const Header = ({ debug = false, hideMenu = false }) => {
       flexWrap="nowrap"
       justifyContent="space-between"
       pl={3}
-      pr={2}
+      pr={[2, 2, "187px"]}
       pt={6}
       debug={debug}
     >
@@ -101,7 +101,7 @@ const Header = ({ debug = false, hideMenu = false }) => {
           <NavLink href="#">participate</NavLink>
         </Box>
       </Navigation>
-      <RightDecor display={[false, false, true]} ml={-10} />
+      <RightDecor display={[false, false, true]} ml="-240px" />
     </HeaderWrapper>
   );
 };

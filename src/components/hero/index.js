@@ -158,11 +158,11 @@ const Hero = ({
           flexWrap={["wrap", "nowrap"]}
           pb={[4, 4, 4, 9]}
         >
-          <VideoWrapper width={[12 / 12, 8 / 12]} px={[0, 8]}>
+          <VideoWrapper width={[12 / 12, 8 / 12]} px={[0, 7]}>
             <VideoWidget {...videoProps} />
           </VideoWrapper>
           <Description
-            pl={[6, 0, 6]}
+            pl={[6, 0, 7]}
             pb={9}
             pt={3}
             alignSelf="flex-end"

@@ -10,7 +10,7 @@ const Container = styled(Box)`
 `;
 
 const StyledContentContainer = styled(ContentContainer)`
-  background: ${props => props.theme.colors.backgroundColor};
+  background: ${props => props.theme.backgroundColor};
 `;
 
 const Footer = props => {
