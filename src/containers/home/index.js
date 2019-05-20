@@ -53,7 +53,7 @@ function Home(props) {
             <SheetsyncLine path={"static/event/summary"} />
           </Hero>
         </Wrapper>
-        <ParallaxPlaceholder my={9} />
+        {!HIDE_IN_PROD && <ParallaxPlaceholder my={9} />}
         <Wrapper>
           <ContentContainer
             title="about"
@@ -126,7 +126,7 @@ function Home(props) {
             </Flex>
           </ContentContainer>
         </Wrapper>
-        <ParallaxPlaceholder my={9} />
+        {!HIDE_IN_PROD && <ParallaxPlaceholder my={9} />}
         <Wrapper>
           <ContentContainer
             title="agenda // sessions"
