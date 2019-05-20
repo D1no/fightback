@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import ReactMarkdown from "react-markdown";
+import breaks from "remark-breaks";
 
 const DecoratedMarkdown = styled(ReactMarkdown)`
   p {
@@ -14,7 +15,13 @@ const DecoratedMarkdown = styled(ReactMarkdown)`
 `;
 
 const MarkdownText = props => {
-  return <DecoratedMarkdown source={props.source} />;
+  return (
+    <DecoratedMarkdown
+      escapeHtml={false}
+      source={props.source}
+      plugins={[breaks]}
+    />
+  );
 };
 
 export default MarkdownText;
