@@ -17,7 +17,9 @@ import SideText from "components/sideText";
 import NoteText from "components/noteText";
 import MarkdownText from "components/markdownText";
 import Signature from "components/signature";
-import Testimonial from "components/testimonial";
+import ExpectSection from "./expect-section";
+import AttendeePhotoGrid from "./attendee-photo-grid";
+import Partners from "./partners";
 import Footer from "containers/footer";
 import { SheetsyncLine, SheetsyncList } from "providers/firebase/sheetsync";
 
@@ -31,31 +33,7 @@ const ParallaxPlaceholder = styled(Box)`
   background-image: ${props => props.theme.gradients.lightBlue};
 `;
 
-const renderExpectSection = () => {
-  const { title, panelmarkdown, attendees } = staticData.expect;
-  return (
-    <ContentContainer
-      containerTitle="what to expect"
-      id="expect"
-      aside={
-        <SideText>
-          <MarkdownText source={panelmarkdown} />
-        </SideText>
-      }
-    >
-      <Box pr={[0, 0, 6]}>
-        <Title>{title}</Title>
-        <Box ml={[0, 0, 6]}>
-          {attendees.map((item, index) => (
-            <Testimonial {...item} key={`${index}-${item.name}`} mb={[8, 4]} />
-          ))}
-        </Box>
-      </Box>
-    </ContentContainer>
-  );
-};
-
-function Home(props) {
+function Home() {
   return (
     <Page>
       <Suspense fallback={<Box>Loading...</Box>}>
@@ -189,7 +167,9 @@ function Home(props) {
         </Wrapper>
         {!HIDE_IN_PROD && <ParallaxPlaceholder my={9} />}
         <Wrapper>
-          {renderExpectSection()}
+          <ExpectSection data={staticData.expect} />
+          <AttendeePhotoGrid attendeesList={staticData.expect.attendeesGrid} />
+          <Partners pb={9} px={[0, 4]} />
           <Footer />
         </Wrapper>
       </Suspense>
