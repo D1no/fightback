@@ -19,7 +19,7 @@ const Footer = props => {
   return (
     <Container mt={9} {...props} pt={5}>
       <StyledContentContainer
-        title={title}
+        containerTitle={title}
         id={id}
         aside={<SideText>{aside}</SideText>}
         mt={0}

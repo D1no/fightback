@@ -89,16 +89,16 @@ const Header = ({ debug = false, hideMenu = false }) => {
         debug={debug}
       >
         <Box>
-          <NavLink href="#">about</NavLink>
-          <NavLink href="#">attendance</NavLink>
+          <NavLink href="#about">about</NavLink>
+          <NavLink href="#attendance">attendance</NavLink>
         </Box>
         <Box>
-          <NavLink href="#">what to expect</NavLink>
-          <NavLink href="#">agenda // sessions</NavLink>
+          <NavLink href="#agenda">agenda // sessions</NavLink>
+          <NavLink href="#expect">what to expect</NavLink>
         </Box>
         <Box>
-          <NavLink href="#">speakers</NavLink>
-          <NavLink href="#">participate</NavLink>
+          <NavLink href="#speakers">speakers</NavLink>
+          <NavLink href="#participate">participate</NavLink>
         </Box>
       </Navigation>
       <RightDecor display={[false, false, true]} ml="-240px" />

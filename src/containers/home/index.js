@@ -56,7 +56,7 @@ function Home(props) {
         {!HIDE_IN_PROD && <ParallaxPlaceholder my={9} />}
         <Wrapper>
           <ContentContainer
-            title="about"
+            containerTitle="about"
             id="about"
             aside={
               <SheetsyncLine path={"static/about/panelmarkdown"}>
@@ -90,7 +90,7 @@ function Home(props) {
             </Box>
           </ContentContainer>
           <ContentContainer
-            title="attendance"
+            containerTitle="attendance"
             id="attendance"
             aside={
               <SheetsyncLine path={"static/attendance/panelmarkdown"}>
@@ -129,7 +129,7 @@ function Home(props) {
         {!HIDE_IN_PROD && <ParallaxPlaceholder my={9} />}
         <Wrapper>
           <ContentContainer
-            title="agenda // sessions"
+            containerTitle="agenda // sessions"
             id="agenda"
             aside={
               <SheetsyncLine path={"static/agenda/panelmarkdown"}>
