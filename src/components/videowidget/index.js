@@ -1,9 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Box, Flex, Text, Link } from "rebass";
+import { Box, Text, Link } from "rebass";
 import styled from "styled-components/macro";
-
-import { debuggableViewProp } from "containers/theme";
 
 const VideoMask = styled(Box)``;
 
@@ -14,7 +12,7 @@ const Overlay = styled(Box)`
     content: "";
     position: absolute;
     opacity: 0.3;
-    background-image: linear-gradient(135deg, #35a8fb 0%, #227af0 100%);
+    background-image: ${props => props.theme.gradients.lightBlue};
     mix-blend-mode: multiply;
     border-radius: 18px;
     top: 0;
