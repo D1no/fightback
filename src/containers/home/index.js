@@ -5,6 +5,8 @@ import React, { Suspense } from "react";
 import styled from "styled-components/macro";
 import { Link, Text, Box, Flex } from "rebass";
 
+import staticData from "containers/static-data";
+
 import Page from "components/page";
 import Header from "components/header";
 import Hero from "components/hero";
@@ -15,6 +17,7 @@ import SideText from "components/sideText";
 import NoteText from "components/noteText";
 import MarkdownText from "components/markdownText";
 import Signature from "components/signature";
+import Testimonial from "components/testimonial";
 import Footer from "containers/footer";
 import { SheetsyncLine, SheetsyncList } from "providers/firebase/sheetsync";
 
@@ -27,6 +30,30 @@ const ParallaxPlaceholder = styled(Box)`
   height: 400px;
   background-image: ${props => props.theme.gradients.lightBlue};
 `;
+
+const renderExpectSection = () => {
+  const { title, panelmarkdown, attendees } = staticData.expect;
+  return (
+    <ContentContainer
+      containerTitle="what to expect"
+      id="expect"
+      aside={
+        <SideText>
+          <MarkdownText source={panelmarkdown} />
+        </SideText>
+      }
+    >
+      <Box pr={[0, 0, 6]}>
+        <Title>{title}</Title>
+        <Box ml={[0, 0, 6]}>
+          {attendees.map((item, index) => (
+            <Testimonial {...item} key={`${index}-${item.name}`} mb={[8, 4]} />
+          ))}
+        </Box>
+      </Box>
+    </ContentContainer>
+  );
+};
 
 function Home(props) {
   return (
@@ -56,7 +83,7 @@ function Home(props) {
         {!HIDE_IN_PROD && <ParallaxPlaceholder my={9} />}
         <Wrapper>
           <ContentContainer
-            title="about"
+            containerTitle="about"
             id="about"
             aside={
               <SheetsyncLine path={"static/about/panelmarkdown"}>
@@ -90,7 +117,7 @@ function Home(props) {
             </Box>
           </ContentContainer>
           <ContentContainer
-            title="attendance"
+            containerTitle="attendance"
             id="attendance"
             aside={
               <SheetsyncLine path={"static/attendance/panelmarkdown"}>
@@ -129,7 +156,7 @@ function Home(props) {
         {!HIDE_IN_PROD && <ParallaxPlaceholder my={9} />}
         <Wrapper>
           <ContentContainer
-            title="agenda // sessions"
+            containerTitle="agenda // sessions"
             id="agenda"
             aside={
               <SheetsyncLine path={"static/agenda/panelmarkdown"}>
@@ -159,6 +186,10 @@ function Home(props) {
               )}
             </SheetsyncList>
           </ContentContainer>
+        </Wrapper>
+        {!HIDE_IN_PROD && <ParallaxPlaceholder my={9} />}
+        <Wrapper>
+          {renderExpectSection()}
           <Footer />
         </Wrapper>
       </Suspense>

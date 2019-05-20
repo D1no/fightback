@@ -21,7 +21,7 @@ const TitleDecoration = ({ children }) => (
 );
 
 const ContentContainer = props => {
-  const { children, title, aside, header, styledAside } = props;
+  const { children, containerTitle: title, aside, header, styledAside } = props;
 
   return (
     <Wrapper width={1} mt={9} pt={9} mb={9} {...props}>
