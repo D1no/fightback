@@ -1,7 +1,6 @@
 {
   "timeZone": "Europe/Paris",
-  "dependencies": {
-  },
+  "dependencies": {},
   "exceptionLogging": "STACKDRIVER",
   "oauthScopes": [
     "https://www.googleapis.com/auth/userinfo.email",

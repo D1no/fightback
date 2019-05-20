@@ -13,6 +13,7 @@ const Padded = props => (
 
 const Wrapper = styled(Padded)`
   max-width: ${props => props.theme.maxWidth};
+  box-sizing: content-box;
 `;
 
 export default Wrapper;

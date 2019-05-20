@@ -1,4 +1,5 @@
 import React, { Suspense } from "react";
+import { Box } from "rebass";
 
 import {
   SheetsyncElement,
@@ -14,18 +15,30 @@ import { LineSkeleton, ListSkeleton } from "components/loadingSkeleton";
  * I.e. static/about/title
  * @param path string to slingle item
  */
-export function SheetsyncLine({ path }) {
+export function SheetsyncLine(props) {
+  const { path, childProps, children } = props;
+
+  const renderContent = () => {
+    const data = SheetsyncElement({ path });
+
+    if (children) {
+      return children({ data });
+    }
+
+    return <LineSkeleton {...childProps}>{data}</LineSkeleton>;
+  };
+
   return (
-    <SheetsyncError
-      path={path}
-      fallbackError={<LineSkeleton fail>Content Error</LineSkeleton>}
-    >
-      <Suspense fallback={<LineSkeleton loading> Loading </LineSkeleton>}>
-        <LineSkeleton>
-          <SheetsyncElement path={path} />
-        </LineSkeleton>
-      </Suspense>
-    </SheetsyncError>
+    <Box {...props}>
+      <SheetsyncError
+        path={path}
+        fallbackError={<LineSkeleton fail>Content Error</LineSkeleton>}
+      >
+        <Suspense fallback={<LineSkeleton loading> Loading </LineSkeleton>}>
+          {renderContent()}
+        </Suspense>
+      </SheetsyncError>
+    </Box>
   );
 }
 
@@ -37,7 +50,20 @@ export function SheetsyncList({ path, children }) {
     >
       <Suspense fallback={<ListSkeleton loading> Loading </ListSkeleton>}>
         <SheetsyncListElement path={path}>
-          {({ items }) => items.map((item, index) => children({ item, index }))}
+          {({ items }) => {
+            if (
+              !(items && (Array.isArray(items) || typeof items === "object"))
+            ) {
+              console.error("SheetsyncList received unsupported data format.");
+              return [];
+            }
+
+            const itemsArr = Array.isArray(items)
+              ? items
+              : Object.keys(items).map(item => items[item]);
+
+            return itemsArr.map((item, index) => children({ item, index }));
+          }}
         </SheetsyncListElement>
       </Suspense>
     </SheetsyncError>

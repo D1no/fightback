@@ -15,20 +15,29 @@ import { ThemeProvider, createGlobalStyle, css } from "styled-components/macro";
 const lightTheme = {
   maxWidth: "1110px",
   breakpoints: [
-    "40em", // 00
-    "52em", // 01
-    "64em", // 02
+    "48em", // 01 - iPad portrait and up
+    "85em", // 02 - most popular desktop and up
+    "118.75em", // 03 - full hd and up
+  ],
+  lineHeights: [
+    '11px', // 00
+    '16px', // 01
+    '18px', // 02
+    '21px', // 03
+    '24px', // 04
+    '32px', // 05
+    '42px', // 06
   ],
   fontSizes: [
     8,   // 00
-    12,   // 01
+    12,  // 01
     14,  // 02
     16,  // 03
     18,  // 04
-    24,  // 06
-    32,  // 07
-    48,  // 08
-    58,  // 09
+    24,  // 05
+    32,  // 06
+    48,  // 07
+    58,  // 08
   ],
   colors: {
     // Main
@@ -40,8 +49,10 @@ const lightTheme = {
     darkgray: "#86878C",
     red: "#F54949",
     loading: "#f7f7f7",
-    loadingFail: "#ffc5c9"
+    loadingFail: "#ffc5c9",
+    blue: "#1D7DEA"
   },
+  backgroundColor: "#fff",
   space: [
     0,   // 00
     3,   // 01
@@ -80,7 +91,15 @@ const lightTheme = {
     small: "0 0 4px 0 rgba(13,18,26,0.19)",
     large: "0 0 24px 0 rgba(13,18,26,0.19)",
   },
+  gradients: {
+    lightBlue: "linear-gradient(135deg, #35a8fb 0%, #227af0 100%)"
+  }
 };
+
+// aliases
+lightTheme.breakpoints.md = lightTheme.breakpoints[0];
+lightTheme.breakpoints.xl = lightTheme.breakpoints[1];
+lightTheme.breakpoints.xxl = lightTheme.breakpoints[2];
 
 /**=============================================================================
 
@@ -157,13 +176,11 @@ const GlobalPageStyle = createGlobalStyle`
     line-height: 1.5; // 27px
     font-size: 18px;
     color: ${themeGet("colors.black")};
-    background-size: cover;
-    background: linear-gradient(-180deg, #FFFFFF 0%, #F7F6F8 67%, #EAE4F7 100%) no-repeat center center fixed;
   }
   
   p {
     margin-block-start: 0em;
-    margin-block-end: 1.5em;
+    margin-block-end: 0em;
   }
 `;
 
@@ -176,6 +193,11 @@ const GlobalResetStyle = createGlobalStyle`
     padding: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+  
+  #root {
+    overflow: hidden;
+    width: 100%;
   }
   
   /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
@@ -255,6 +277,10 @@ const GlobalResetStyle = createGlobalStyle`
   
   a {
     background-color: transparent;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
   }
   
   /**
