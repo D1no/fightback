@@ -29,5 +29,53 @@ export default {
         image: "/media/holger-ewald.jpg",
       },
     ],
+    attendeesGrid: [
+      {
+        name: "Ralf Brunken",
+        position: "CIO Škoda Auto",
+        image: "/media/ralf-brunken.jpg",
+      },
+      {
+        name: "Peter Wirtz",
+        position: "CEO & Partner 3i Germany",
+        image: "/media/peter-wirtz.jpg",
+      },
+      {
+        image: "/media/jeanette-von-ratibor-and-stephan-stroh.jpg",
+        grid: [
+          {
+            name: "Dr. Jeanette von Ratibor",
+            position: "SVP Deutsche Telekom",
+          },
+          {
+            name: "Stephan Stroh",
+            position: "CDO Deutsche Bahn",
+          },
+        ],
+      },
+      {
+        image: "/media/minoo-zabafi-and-kristopher-fichtner.jpg",
+        grid: [
+          {
+            name: "Dr. Minoo Zabafi",
+            position: "VP Bertelsmann Investments",
+          },
+          {
+            name: "Kristopher Fichtner",
+            position: "Founder Thermondo",
+          },
+        ],
+      },
+      {
+        name: "Juliane Schulze",
+        position: "Founder & Head of green:field by Vattenfall",
+        image: "/media/juliane-schulze.jpg",
+      },
+      {
+        name: "Dr. Regina Vetters",
+        position: "Head of Barmer.i",
+        image: "/media/regina-vetters.jpg",
+      },
+    ],
   },
 };
