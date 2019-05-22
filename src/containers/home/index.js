@@ -2,8 +2,10 @@
  * Main page of the app
  */
 import React, { Suspense } from "react";
+import { Parallax } from "react-parallax";
 import styled from "styled-components/macro";
 import { Link, Text, Box, Flex } from "rebass";
+import { space } from "styled-system";
 
 import staticData from "containers/static-data";
 
@@ -28,12 +30,20 @@ if (process.env.NODE_ENV === "development") {
   HIDE_IN_PROD = false;
 }
 
-const ParallaxPlaceholder = styled(Box)`
-  height: 400px;
+const ParallaxPlaceholder = styled(Parallax)`
+  ${space}
+  height: 0;
   background-image: ${props => props.theme.gradients.lightBlue};
 `;
 
 function Home() {
+  const screenRatio = window.innerHeight / window.innerWidth;
+  let ParallaxStrength = 100;
+
+  if (typeof window !== "undefined" && screenRatio > 1.3) {
+    ParallaxStrength = screenRatio > 1.5 ? 30 : 50;
+  }
+
   return (
     <Page>
       <Suspense fallback={<Box>Loading...</Box>}>
@@ -58,7 +68,13 @@ function Home() {
             <SheetsyncLine path={"static/event/summary"} />
           </Hero>
         </Wrapper>
-        {!HIDE_IN_PROD && <ParallaxPlaceholder my={9} />}
+        <ParallaxPlaceholder
+          my={[0, 9]}
+          bgImage="/media/parallax1.jpg"
+          pb={["40%", "27%"]}
+          strength={-ParallaxStrength}
+          bgImageStyle={{ width: "100%", height: "auto" }}
+        />
         <Wrapper>
           <ContentContainer
             containerTitle="about"
@@ -131,7 +147,13 @@ function Home() {
             </Flex>
           </ContentContainer>
         </Wrapper>
-        {!HIDE_IN_PROD && <ParallaxPlaceholder my={9} />}
+        <ParallaxPlaceholder
+          my={[0, 9]}
+          bgImage="/media/parallax2.jpg"
+          pb={["40%", "27%"]}
+          strength={-ParallaxStrength}
+          bgImageStyle={{ width: "100%", height: "auto" }}
+        />
         <Wrapper>
           <ContentContainer
             containerTitle="agenda // sessions"
@@ -165,7 +187,13 @@ function Home() {
             </SheetsyncList>
           </ContentContainer>
         </Wrapper>
-        {!HIDE_IN_PROD && <ParallaxPlaceholder my={9} />}
+        <ParallaxPlaceholder
+          my={[0, 9]}
+          bgImage="/media/parallax3.jpg"
+          pb={["40%", "27%"]}
+          strength={-ParallaxStrength}
+          bgImageStyle={{ width: "100%", height: "auto" }}
+        />
         <Wrapper>
           <ExpectSection data={staticData.expect} />
           <AttendeePhotoGrid attendeesList={staticData.expect.attendeesGrid} />
