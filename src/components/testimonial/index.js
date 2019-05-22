@@ -38,7 +38,9 @@ const Testimonial = props => {
           <TestimonialText fontWeight="medium" fontSize={5} my={3}>
             {testimonial}
           </TestimonialText>
-          <DescriptionText fontWeight="light">{text}</DescriptionText>
+          {text ? (
+            <DescriptionText fontWeight="light">{text}</DescriptionText>
+          ) : null}
         </Description>
       </Grid>
       {children}

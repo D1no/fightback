@@ -19,6 +19,8 @@ import SideText from "components/sideText";
 import NoteText from "components/noteText";
 import MarkdownText from "components/markdownText";
 import Signature from "components/signature";
+import ResponsiveBox from "components/responsiveBox";
+import Speaker from "./speaker";
 import ExpectSection from "./expect-section";
 import AttendeePhotoGrid from "./attendee-photo-grid";
 import Partners from "./partners";
@@ -190,6 +192,31 @@ function Home() {
         <ParallaxPlaceholder
           my={[0, 9]}
           bgImage="/media/parallax3.jpg"
+          pb={["40%", "27%"]}
+          strength={-ParallaxStrength}
+          bgImageStyle={{ width: "100%", height: "auto" }}
+        />
+        <Wrapper>
+          <ContentContainer
+            containerTitle={
+              <ResponsiveBox display={[false, true]}>
+                speakers about fightback
+              </ResponsiveBox>
+            }
+            id="speakers"
+            mb={0}
+          >
+            <Title mb={0}>
+              <SheetsyncLine path={"static/speakers/title"} />
+            </Title>
+          </ContentContainer>
+          <SheetsyncList path={"speakers"}>
+            {({ item, index }) => <Speaker data={item} key={index} />}
+          </SheetsyncList>
+        </Wrapper>
+        <ParallaxPlaceholder
+          my={[0, 9]}
+          bgImage="/media/parallax4.jpg"
           pb={["40%", "27%"]}
           strength={-ParallaxStrength}
           bgImageStyle={{ width: "100%", height: "auto" }}
