@@ -46,7 +46,7 @@ function Home() {
                 <SheetsyncLine path={"static/event/date"} />
               </>,
               <>
-                <Text fontWeight="bold">attendance o. nomination</Text>
+                <Text fontWeight="bold">contact & enquiries</Text>
                 <SheetsyncLine path={"static/event/email"}>
                   {({ data }) => {
                     return <Link href={`mailto:${data}`}>{data}</Link>;
