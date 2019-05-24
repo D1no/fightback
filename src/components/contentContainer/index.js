@@ -44,9 +44,11 @@ const ContentContainer = props => {
           {children}
         </Content>
         <Aside width={[12 / 12, 4 / 12]} pl={[0, 7]} as={styledAside}>
-          <AsideTitle display={[false, true]} mb={6}>
-            <TitleDecoration>{title}</TitleDecoration>
-          </AsideTitle>
+          {title ? (
+            <AsideTitle display={[false, true]} mb={6}>
+              <TitleDecoration>{title}</TitleDecoration>
+            </AsideTitle>
+          ) : null}
           {aside}
         </Aside>
       </Container>

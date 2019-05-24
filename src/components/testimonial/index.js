@@ -8,6 +8,9 @@ const Name = styled(Text)``;
 const Position = styled(Text)``;
 const Grid = styled(Flex)``;
 const Image = styled(Box)`
+  @media (min-width: ${props => props.theme.breakpoints[0]}) {
+    max-height: 245px;
+  }
   border-radius: 18px;
   overflow: hidden;
   img {
@@ -15,14 +18,22 @@ const Image = styled(Box)`
     display: block;
   }
 `;
-const Description = styled(Box)`
+const Description = styled(Flex)`
   min-width: 300px;
 `;
 const TestimonialText = styled(Text)``;
 const DescriptionText = styled(Text)``;
 
 const Testimonial = props => {
-  const { children, text, image, testimonial, position, name } = props;
+  const {
+    children,
+    text,
+    image,
+    testimonial,
+    position,
+    name,
+    styledImageContainer,
+  } = props;
 
   return (
     <Container {...props}>
@@ -31,14 +42,22 @@ const Testimonial = props => {
         <Position fontWeight="light">{position}</Position>
       </Header>
       <Grid flexWrap={["wrap", "nowrap"]}>
-        <Image width={[12 / 12, "245px"]} mb={3}>
+        <Image width={[12 / 12, "245px"]} mb={3} as={styledImageContainer}>
           <img src={image} alt={name} />
         </Image>
-        <Description ml={[0, 4, 7]} flex={1}>
-          <TestimonialText fontWeight="medium" fontSize={5} my={3}>
+        <Description
+          ml={[0, 4, 7]}
+          flex={1}
+          flexDirection={"column"}
+          justifyContent={"center"}
+          mb={3}
+        >
+          <TestimonialText fontWeight="medium" fontSize={5} mb={3}>
             {testimonial}
           </TestimonialText>
-          <DescriptionText fontWeight="light">{text}</DescriptionText>
+          {text ? (
+            <DescriptionText fontWeight="light">{text}</DescriptionText>
+          ) : null}
         </Description>
       </Grid>
       {children}
