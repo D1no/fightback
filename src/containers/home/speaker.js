@@ -57,7 +57,7 @@ export default ({ data }) => {
       <Testimonial
         name={`${firstName} ${lastName}`}
         position={`${position} at ${companyOrganization}`}
-        image={`https://drive.google.com/uc?id=${speakerPictureId}`}
+        image={`/media/speakers/${speakerPictureId}`}
         testimonial={speakerTopic}
         mb={[8, 4]}
         styledImageContainer={StyledImageContainer}

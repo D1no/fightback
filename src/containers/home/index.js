@@ -17,6 +17,7 @@ import MarkdownText from "components/markdownText";
 import Signature from "components/signature";
 import ResponsiveBox from "components/responsiveBox";
 import Parallax from "components/parallax";
+import PersonCard from "components/personCard";
 import Footer from "containers/footer";
 
 import Speaker from "./speaker";
@@ -181,13 +182,47 @@ function Home() {
         />
         <Wrapper>
           <ContentContainer
+            id="speakers"
+            aside={
+              <SheetsyncLine path={"static/speakers/panelmarkdown"}>
+                {({ data }) => (
+                  <SideText>
+                    <MarkdownText source={data} />
+                  </SideText>
+                )}
+              </SheetsyncLine>
+            }
+          >
+            <PersonCard
+              width={[12 / 12]}
+              double
+              image="/images/reveal.jpg"
+              footerProps={{ px: [0, 0, 4] }}
+              grid={[
+                {
+                  name: "Felix Staeritz",
+                  position: "Founder Factor10, Member World Economic Forum",
+                },
+                {
+                  name: "Simon Torrance",
+                  position: "Author, Founder Platform Economy Summit Europe",
+                },
+              ]}
+            >
+              <Title mb={0} color="white" fontSize="38px">
+                <SheetsyncLine path={"static/speakers/reveal"} />
+              </Title>
+            </PersonCard>
+          </ContentContainer>
+          <ContentContainer
             containerTitle={
               <ResponsiveBox display={[false, true]}>
                 speakers about fightback
               </ResponsiveBox>
             }
-            id="speakers"
             mb={0}
+            mt={0}
+            pt={0}
           >
             <Title mb={0}>
               <SheetsyncLine path={"static/speakers/title"} />
