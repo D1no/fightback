@@ -24,7 +24,7 @@ const ContentContainer = props => {
   const { children, containerTitle: title, aside, header, styledAside } = props;
 
   return (
-    <Wrapper width={1} mt={9} pt={9} mb={9} {...props}>
+    <Wrapper width={1} mt={[5, 9]} pt={9} mb={[5, 9]} {...props}>
       {header ? (
         <Header width={1} mt={-9}>
           {header}
