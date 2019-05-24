@@ -2,11 +2,7 @@
  * Main page of the app
  */
 import React, { Suspense } from "react";
-import { Parallax } from "react-parallax";
-import styled from "styled-components/macro";
 import { Link, Text, Box, Flex } from "rebass";
-import { space } from "styled-system";
-
 import staticData from "containers/static-data";
 
 import Page from "components/page";
@@ -20,11 +16,14 @@ import NoteText from "components/noteText";
 import MarkdownText from "components/markdownText";
 import Signature from "components/signature";
 import ResponsiveBox from "components/responsiveBox";
+import Parallax from "components/parallax";
+import Footer from "containers/footer";
+
 import Speaker from "./speaker";
 import ExpectSection from "./expect-section";
 import AttendeePhotoGrid from "./attendee-photo-grid";
 import Partners from "./partners";
-import Footer from "containers/footer";
+
 import { SheetsyncLine, SheetsyncList } from "providers/firebase/sheetsync";
 
 let HIDE_IN_PROD = true;
@@ -32,19 +31,7 @@ if (process.env.NODE_ENV === "development") {
   HIDE_IN_PROD = false;
 }
 
-const ParallaxPlaceholder = styled(Parallax)`
-  ${space}
-  height: 0;
-`;
-
 function Home() {
-  const screenRatio = window.innerHeight / window.innerWidth;
-  let ParallaxStrength = 300;
-
-  if (typeof window !== "undefined" && screenRatio > 1.3) {
-    ParallaxStrength = screenRatio > 1.5 ? 30 : 50;
-  }
-
   return (
     <Page>
       <Suspense fallback={<Box>Loading...</Box>}>
@@ -69,11 +56,10 @@ function Home() {
             <SheetsyncLine path={"static/event/summary"} />
           </Hero>
         </Wrapper>
-        <ParallaxPlaceholder
+        <Parallax
           my={[0, 9]}
           bgImage="/media/parallax1.jpg"
           pb={["40%", "27%"]}
-          strength={-ParallaxStrength}
           bgImageStyle={{ width: "100%", height: "auto" }}
         />
         <Wrapper>
@@ -148,11 +134,10 @@ function Home() {
             </Flex>
           </ContentContainer>
         </Wrapper>
-        <ParallaxPlaceholder
+        <Parallax
           my={[0, 9]}
           bgImage="/media/parallax2.jpg"
           pb={["40%", "27%"]}
-          strength={-ParallaxStrength}
           bgImageStyle={{ width: "100%", height: "auto" }}
         />
         <Wrapper>
@@ -188,11 +173,10 @@ function Home() {
             </SheetsyncList>
           </ContentContainer>
         </Wrapper>
-        <ParallaxPlaceholder
+        <Parallax
           my={[0, 9]}
           bgImage="/media/parallax3.jpg"
           pb={["40%", "27%"]}
-          strength={-ParallaxStrength}
           bgImageStyle={{ width: "100%", height: "auto" }}
         />
         <Wrapper>
@@ -213,11 +197,10 @@ function Home() {
             {({ item, index }) => <Speaker data={item} key={index} />}
           </SheetsyncList>
         </Wrapper>
-        <ParallaxPlaceholder
+        <Parallax
           my={[0, 9]}
           bgImage="/media/parallax4.jpg"
           pb={["40%", "27%"]}
-          strength={-ParallaxStrength}
           bgImageStyle={{ width: "100%", height: "auto" }}
         />
         <Wrapper>
