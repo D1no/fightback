@@ -11,6 +11,13 @@ const Bio = styled(Text)`
   border-left: 2px solid ${props => props.theme.colors.gray};
 `;
 
+const StyledImageContainer = styled.div`
+  @media (max-width: ${props => props.theme.breakpoints[0]}) {
+    padding-bottom: 100%;
+    height: 0;
+  }
+`;
+
 export default ({ data }) => {
   const {
     firstName,
@@ -53,6 +60,7 @@ export default ({ data }) => {
         image={`https://drive.google.com/uc?id=${speakerPictureId}`}
         testimonial={speakerTopic}
         mb={[8, 4]}
+        styledImageContainer={StyledImageContainer}
       >
         {shortbio ? (
           <Bio
