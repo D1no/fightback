@@ -6,10 +6,10 @@
     "fightbackplatform": {
       "hosting": {
         "production": [
-          "fightbackcommunity"
+          "fightbackplatform"
         ],
         "staging": [
-          "fightbackplatform"
+          "fightbackcommunity"
         ]
       }
     }
