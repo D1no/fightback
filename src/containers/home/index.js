@@ -35,12 +35,11 @@ if (process.env.NODE_ENV === "development") {
 const ParallaxPlaceholder = styled(Parallax)`
   ${space}
   height: 0;
-  background-image: ${props => props.theme.gradients.lightBlue};
 `;
 
 function Home() {
   const screenRatio = window.innerHeight / window.innerWidth;
-  let ParallaxStrength = 100;
+  let ParallaxStrength = 300;
 
   if (typeof window !== "undefined" && screenRatio > 1.3) {
     ParallaxStrength = screenRatio > 1.5 ? 30 : 50;
@@ -58,7 +57,7 @@ function Home() {
                 <SheetsyncLine path={"static/event/date"} />
               </>,
               <>
-                <Text fontWeight="bold">attendance o. nomination</Text>
+                <Text fontWeight="bold">contact & enquiries</Text>
                 <SheetsyncLine path={"static/event/email"}>
                   {({ data }) => {
                     return <Link href={`mailto:${data}`}>{data}</Link>;
