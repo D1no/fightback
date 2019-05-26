@@ -8,11 +8,18 @@ const Container = styled(Flex)``;
 const Header = styled(Box)``;
 const Title = styled(Box)`
   ${responsiveDisplayProp}
+
+  a {
+    color: ${props => props.theme.colors.black};
+  }
 `;
 const Content = styled(Box)``;
 const Aside = styled(Box)``;
 const AsideTitle = styled(Box)`
   ${responsiveDisplayProp}
+  a {
+    color: ${props => props.theme.colors.black};
+  }
 `;
 const TitleDecoration = ({ children }) => (
   <Text fontWeight="bold" fontSize={3} lineHeight={5}>

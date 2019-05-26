@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import styled from "styled-components";
 
 import { Box, Link } from "rebass";
@@ -13,7 +13,17 @@ const FooterContainer = props => {
     <Container {...props}>
       <Footer
         aside={<SheetsyncLine path={"static/footer/copyright"} />}
-        title="privacy // imprint"
+        title={
+          <Fragment>
+            <Link href="https://www.factor10.io/privacy/" target="_blank">
+              privacy
+            </Link>{" "}
+            //{" "}
+            <Link href="https://www.factor10.io/imprint/" target="_blank">
+              imprint
+            </Link>
+          </Fragment>
+        }
         id="footer"
       >
         <SheetsyncLine path={"static/footer/note"} />
