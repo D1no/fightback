@@ -8,7 +8,7 @@ import { ReactComponent as SVG } from "./icon-close.svg";
 const SvgMenu = styled(SVG)`
   ${space}
   ${width}
-  height: 24px;
+  height: 18px;
   display: block;
   // Styling of SVG logo
   ${props => debuggableViewProp(props)}

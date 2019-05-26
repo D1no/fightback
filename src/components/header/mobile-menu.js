@@ -36,12 +36,16 @@ const SlideOut = styled(Box)`
   width: 80%;
   height: 100vh;
   background: ${props => props.theme.colors.white};
+  line-height: 55px;
 `;
 
 const CloseBtn = styled(MobileCloseIcon)`
   position: absolute;
   right: 0;
   top: 0;
+
+  margin-top: 37px;
+  margin-right: 36px;
 `;
 
 export default class MobileMenu extends Component {
@@ -91,7 +95,7 @@ export default class MobileMenu extends Component {
               duration={500}
             >
               <SlideOut p={9}>
-                <CloseBtn onClick={this.hideMenu} m={5} />
+                <CloseBtn onClick={this.hideMenu} />
                 {children}
               </SlideOut>
             </Fade>
