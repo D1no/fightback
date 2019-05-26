@@ -17,8 +17,8 @@ const FooterContainer = props => {
           <Fragment>
             <Link href="https://www.factor10.io/privacy/" target="_blank">
               privacy
-            </Link>{" "}
-            //{" "}
+            </Link>
+            {` // `}
             <Link href="https://www.factor10.io/imprint/" target="_blank">
               imprint
             </Link>

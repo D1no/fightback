@@ -13,6 +13,8 @@ const SvgLogo = styled(SVG)`
   ${props => debuggableViewProp(props)}
 `;
 
-const Logo = props => <SvgLogo {...props} />;
+const Logo = props => (
+  <SvgLogo {...props} debug={props.debug ? true : undefined} />
+);
 
 export default Logo;
