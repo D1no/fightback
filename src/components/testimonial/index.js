@@ -52,7 +52,7 @@ const Testimonial = props => {
           justifyContent={"center"}
           mb={3}
         >
-          <TestimonialText fontWeight="medium" fontSize={5} mb={3}>
+          <TestimonialText fontWeight="medium" fontSize={["20px", 5]} mb={3}>
             {testimonial}
           </TestimonialText>
           {text ? (

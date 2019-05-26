@@ -30,7 +30,9 @@ const TextContainer = styled(Flex)`
 const renderPersonDetails = ({ name, position }) => (
   <Box width={[12 / 12]}>
     <Name fontWeight="medium">{name}</Name>
-    <Position fontWeight="light">{position}</Position>
+    <Position fontWeight="light" fontSize={[3, 4]}>
+      {position}
+    </Position>
   </Box>
 );
 
