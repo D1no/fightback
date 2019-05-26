@@ -41,7 +41,7 @@ const StyledBorder = styled.div`
 const Page = props => {
   return (
     <DecoratedPage {...props}>
-      <SeparatorContainer>
+      <SeparatorContainer display={[false, true]}>
         <Wrapper>
           <ContentContainer mt={0} pt={0} mb={0} styledAside={StyledBorder} />
         </Wrapper>
