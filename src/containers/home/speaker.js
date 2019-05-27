@@ -69,7 +69,7 @@ export default ({ data }) => {
             py={4}
             fontWeight="light"
             mt={3}
-            textAlign="justify"
+            textAlign={["inherit", "justify"]}
           >
             {shortbio}
           </Bio>

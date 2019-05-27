@@ -27,18 +27,13 @@ import Partners from "./partners";
 
 import { SheetsyncLine, SheetsyncList } from "providers/firebase/sheetsync";
 
-let HIDE_IN_PROD = true;
-if (process.env.NODE_ENV === "development") {
-  HIDE_IN_PROD = false;
-}
-
 function Home() {
   return (
     <Page>
       <Suspense fallback={<Box>Loading...</Box>}>
         <Wrapper>
           <Hero
-            top={<Header hideMenu={HIDE_IN_PROD} />}
+            top={<Header />}
             middleStretch={[
               <>
                 <SheetsyncLine path={"static/event/time"} />

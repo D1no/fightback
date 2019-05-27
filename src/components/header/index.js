@@ -1,10 +1,10 @@
-import React from "react";
+import React, { Fragment } from "react";
 import styled from "styled-components/macro";
 import { Flex, Box, Link } from "rebass";
 
 import { responsiveDisplayProp, debuggableViewProp } from "containers/theme";
+import MobileMenu from "./mobile-menu";
 import Logo from "./logo";
-import Icon from "./icon";
 
 const HeaderWrapper = styled(Flex)`
   position: relative;
@@ -12,11 +12,6 @@ const HeaderWrapper = styled(Flex)`
 `;
 
 const LogoWrapper = styled(Box)`
-  ${props => debuggableViewProp(props)}
-`;
-
-const MobileMenu = styled(Box)`
-  ${responsiveDisplayProp}
   ${props => debuggableViewProp(props)}
 `;
 
@@ -48,10 +43,27 @@ const RightDecor = styled(Box)`
 `;
 
 const NavLink = props => (
-  <StyledNavLink px={2} pt={2} pb={1} color="inherit" fontSize={2} {...props} />
+  <StyledNavLink px={2} pt={2} pb={1} color="inherit" {...props} />
 );
 
-const Header = ({ debug = false, hideMenu = false }) => {
+const MenuItems = () => (
+  <Fragment>
+    <Box>
+      <NavLink href="#about">about</NavLink>
+      <NavLink href="#attendance">attendance</NavLink>
+    </Box>
+    <Box>
+      <NavLink href="#agenda">agenda // sessions</NavLink>
+      <NavLink href="#speakers">speakers</NavLink>
+    </Box>
+    <Box>
+      <NavLink href="#expect">what to expect</NavLink>
+      <NavLink href="mailto:summit@fightback.community">participate</NavLink>
+    </Box>
+  </Fragment>
+);
+
+const Header = ({ debug = false }) => {
   let sectionProps = {
     debug,
   };
@@ -61,7 +73,7 @@ const Header = ({ debug = false, hideMenu = false }) => {
       flexWrap="nowrap"
       justifyContent="space-between"
       pl={3}
-      pr={[2, 2, "187px"]}
+      pr={[2, 2, "230px"]}
       pt={6}
       debug={debug}
     >
@@ -72,36 +84,26 @@ const Header = ({ debug = false, hideMenu = false }) => {
         py={4}
         pr={3}
         pl={5}
-        display={!hideMenu && [true, false]}
+        display={[true, false]}
         alignSelf="center"
         debug={debug}
       >
-        <Icon />
+        <MenuItems />
       </MobileMenu>
       <Navigation
         py={4}
         pr={3}
         pl={5}
-        display={!hideMenu && [false, true]}
+        display={[false, true]}
         alignSelf="center"
-        justifyContent="space-around"
+        justifyContent="space-between"
         flex="1"
         debug={debug}
+        fontSize={2}
       >
-        <Box>
-          <NavLink href="#about">about</NavLink>
-          <NavLink href="#attendance">attendance</NavLink>
-        </Box>
-        <Box>
-          <NavLink href="#agenda">agenda // sessions</NavLink>
-          <NavLink href="#expect">what to expect</NavLink>
-        </Box>
-        <Box>
-          <NavLink href="#speakers">speakers</NavLink>
-          <NavLink href="#participate">participate</NavLink>
-        </Box>
+        <MenuItems />
       </Navigation>
-      <RightDecor display={[false, false, true]} ml="-240px" />
+      <RightDecor display={[false, false, true]} ml="-220px" />
     </HeaderWrapper>
   );
 };
