@@ -58,7 +58,7 @@ const MenuItems = () => (
     </Box>
     <Box>
       <NavLink href="#expect">what to expect</NavLink>
-      <NavLink href="mailto:summit@fightback.community">participate</NavLink>
+      {/*<NavLink href="mailto:summit@fightback.community">participate</NavLink>*/}
     </Box>
   </Fragment>
 );
