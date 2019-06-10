@@ -8,6 +8,7 @@ import staticData from "containers/static-data";
 import Page from "components/v2/page";
 import Wrapper from "components/v2/wrapper";
 import Header from "components/v2/header";
+import AngledContainer from "components/v2/angledContainer";
 
 import MembersHero from "./members-hero";
 
@@ -23,6 +24,14 @@ function Members() {
             features={staticData.members.features}
           />
         </Wrapper>
+        <AngledContainer background={"grey"}>
+          <Wrapper>Text</Wrapper>
+        </AngledContainer>
+        <AngledContainer background={"dark"} top mirror>
+          <Wrapper pt={9} pb={7}>
+            Footer
+          </Wrapper>
+        </AngledContainer>
       </Suspense>
     </Page>
   );
