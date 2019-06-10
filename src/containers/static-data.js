@@ -78,4 +78,26 @@ export default {
       },
     ],
   },
+  members: {
+    headerText: [
+      "TODAY’S MATCH-UP:",
+      `THE ERA OF
+DIGITALISATION`,
+      "VS.",
+      `BUSINESS
+AS USUAL`,
+    ],
+    description: `
+We are at a critical time for most incumbent companies, as existing business models are failing, and corporations struggle to adapt to technological change.
+
+Current approaches often appear unstructured, unsystematized and simply not radical enough. They fail to produce the desired impact not impactful as established corporates are reluctant to transform their existing business model and suffer from the inertia of their large organizations to implement digital strategies.
+
+Need proof?    
+`,
+    features: [
+      "90% OF CEO’S SAY THEIR BUSINESS MODELS ARE NOT ECONOMICALL Y VIABLE AS THEIR SECTOR DIGITALISES.",
+      "85% OF DIGITAL INVESTMENTS TODAY HAVE DELIVERED ZERO OR NEGATIVE PROFIT AFTER COST OF CAPITAL.",
+      "AT THE SAME TIME 70% OF THE WORLD’S TOP 10 COMPANIES ARE“UNICORN” START-UPS ARE PLATFORMS, ALL OF THEM FROM THE US AND CHINA.",
+    ],
+  },
 };
