@@ -17,11 +17,15 @@ const StyledFightbackLogo = styled(Box)`
 const FightbackLogoSvg = styled(SVG)`
   display: block;
   width: 100%;
+
+  .main-text {
+    fill: ${props => (props.inverted ? "white" : "#171728")};
+  }
 `;
 
 const FightbackLogo = props => (
   <StyledFightbackLogo {...props}>
-    <FightbackLogoSvg />
+    <FightbackLogoSvg inverted={props.inverted} />
   </StyledFightbackLogo>
 );
 

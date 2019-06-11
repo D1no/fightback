@@ -150,5 +150,8 @@ But, no technological change can take place without a shift in mindset. A cultur
         image: "/media/speakers/BrigitteMohn_Bertelsmann_1.jpg",
       },
     ],
+    contactUsTitle: "DON’T WANT TO MISS OUT?",
+    contactUsText:
+      "For attendance, guest nomination or partnership enquiries please contact us below.",
   },
 };

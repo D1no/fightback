@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Box } from "rebass";
 
-import AngledDivider from "../angledDivider";
+import AngledDivider from "components/v2/angledDivider";
 
 const DecoratedAngledContainer = styled(Box)``;
 const DecoratedAngledContainerContent = styled(Box)`
@@ -33,7 +33,17 @@ const DecoratedAngledContainerContent = styled(Box)`
 `;
 
 const AngledContainer = props => {
-  const { right, left, mirror, background, children, top, bottom } = props;
+  const {
+    right,
+    left,
+    mirror,
+    background,
+    children,
+    top,
+    bottom,
+    contentPT = [2, 2, 10],
+    contentPB = [2, 2, 10],
+  } = props;
 
   return (
     <DecoratedAngledContainer {...props}>
@@ -44,7 +54,11 @@ const AngledContainer = props => {
         />
       ) : null}
 
-      <DecoratedAngledContainerContent py={[2, 2, 10]} background={background}>
+      <DecoratedAngledContainerContent
+        pt={contentPT}
+        pb={contentPB}
+        background={background}
+      >
         {children}
       </DecoratedAngledContainerContent>
       {!top ? (

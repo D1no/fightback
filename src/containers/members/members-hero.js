@@ -3,8 +3,8 @@ import styled from "styled-components";
 import { space, width } from "styled-system";
 import { Box, Flex, Text } from "rebass";
 
-import MarkdownText from "../../components/v2/markdownText";
-import Title from "../../components/v2/title";
+import MarkdownText from "components/v2/markdownText";
+import Title from "components/v2/title";
 
 import { ReactComponent as SVG } from "./members-hero.svg";
 

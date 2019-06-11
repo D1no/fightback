@@ -8,7 +8,7 @@ import MarkdownText from "../../components/v2/markdownText";
 import Title from "../../components/v2/title";
 import { ReactComponent as CircleClip } from "./circle-clip.svg";
 import { ReactComponent as ArrowSVG } from "./arrow.svg";
-import { responsiveDisplayProp } from "../../containers/theme";
+import { responsiveDisplayProp } from "containers/theme";
 
 const StyledCircleClip = styled(CircleClip)`
   position: absolute;
@@ -69,7 +69,7 @@ const Delimeter = styled(Box)`
 
 const MoreButton = styled(Text)`
   display: inline-block;
-  border-bottom: 1px solid ${props => props.theme.lightGreen};
+  border-bottom: 1px solid ${props => props.theme.secondary};
 `;
 
 const ShowMoreContainer = styled(Link)`
@@ -117,7 +117,7 @@ const Community = props => {
           </Description>
         </Wrapper>
       </AngledContainer>
-      <Wrapper mt={[0, 0, "-610px"]}>
+      <Wrapper mt={[0, 0, "-610px"]} mb={[8, 10]}>
         <Flex
           alignItems={["flex-start", "flex-start", "flex-end"]}
           flexDirection={"column"}
@@ -160,7 +160,7 @@ const Community = props => {
                 </MemberItem>
               );
             })}
-            <ShowMoreContainer ml={[0, 0, "60px"]} color="lightGreen">
+            <ShowMoreContainer ml={[0, 0, "60px"]} color="secondary">
               <MoreButton fontWeight="bold" fontSize={3} pb={1}>
                 MORE
               </MoreButton>

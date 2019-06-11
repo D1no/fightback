@@ -2,16 +2,21 @@
  * Main page of the app
  */
 import React, { Suspense } from "react";
-import { Box } from "rebass";
+import { Box, Text } from "rebass";
+import styled from "styled-components";
 import staticData from "containers/static-data";
 
 import Page from "components/v2/page";
 import Wrapper from "components/v2/wrapper";
 import Header from "components/v2/header";
-import AngledContainer from "components/v2/angledContainer";
+import Footer from "components/v2/footer";
 
 import MembersHero from "./members-hero";
+import ContactUs from "./contact-us";
 import Community from "./community";
+import Partners from "./partners";
+
+const PartnersTitle = styled(Text)``;
 
 function Members() {
   return (
@@ -30,11 +35,25 @@ function Members() {
           description={staticData.members.communityDescription}
           people={staticData.members.communityPeople}
         />
-        <AngledContainer background={"dark"} top mirror>
-          <Wrapper pt={9} pb={7}>
-            Footer
-          </Wrapper>
-        </AngledContainer>
+        <Wrapper>
+          <PartnersTitle
+            fontSize={3}
+            fontWeight="bold"
+            color="accent"
+            mx="auto"
+            width={300}
+            textAlign="center"
+            mb={6}
+          >
+            A SAMPLE OF THE COMPANIES REPRESENTED IN OUR MEMBERSHIP:
+          </PartnersTitle>
+          <Partners mb={[8, 8, 11]} px={[0, 7]} />
+          <ContactUs
+            headerText={staticData.members.contactUsTitle}
+            description={staticData.members.contactUsText}
+          />
+        </Wrapper>
+        <Footer />
       </Suspense>
     </Page>
   );

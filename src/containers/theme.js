@@ -138,7 +138,6 @@ const themev2 = {
     accent: "#FA0050",
     // Variations
     purple: "#A028A0",
-    lightGreen: "#14C8B4",
     green: "#0F8778",
     yellow: "#FFD20A",
     grey: "#F0F0F0",
