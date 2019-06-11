@@ -22,6 +22,8 @@ const DecoratedAngledContainerContent = styled(Box)`
         return null;
     }
   }};
+  margin-top: -1px;
+  margin-bottom: -1px;
   background-color: ${props =>
     props.background
       ? props.theme.colors[props.background]
@@ -42,7 +44,7 @@ const AngledContainer = props => {
         />
       ) : null}
 
-      <DecoratedAngledContainerContent py={10} background={background}>
+      <DecoratedAngledContainerContent py={[2, 2, 10]} background={background}>
         {children}
       </DecoratedAngledContainerContent>
       {!top ? (

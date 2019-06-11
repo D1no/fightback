@@ -1,13 +1,17 @@
 import React from "react";
 import styled from "styled-components";
 import { Text } from "rebass";
+import { space } from "styled-system";
 
 import MarkdownText from "../markdownText";
 
 const StyledDecoratedTitle = styled(Text)`
+  margin-block-start: 0;
+  margin-block-end: 0;
   p {
     margin-block-end: 0;
   }
+  ${space}
 `;
 
 const Title = props => {

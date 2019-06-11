@@ -7,6 +7,7 @@ const DecoratedAngledDivider = styled(SVG)`
   display: block;
   height: 120px;
   width: 100%;
+  min-width: 1500px;
   fill: ${props =>
     props.fill
       ? props.theme.colors[props.fill]

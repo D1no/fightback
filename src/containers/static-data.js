@@ -88,16 +88,67 @@ DIGITALISATION`,
 AS USUAL`,
     ],
     description: `
-We are at a critical time for most incumbent companies, as existing business models are failing, and corporations struggle to adapt to technological change.
+Europe has, for centuries, been a powerhouse of production and technical innovation at the forefront of global technological advancement, setting an example for the world.
 
-Current approaches often appear unstructured, unsystematized and simply not radical enough. They fail to produce the desired impact not impactful as established corporates are reluctant to transform their existing business model and suffer from the inertia of their large organizations to implement digital strategies.
+Businesses in Europe have generated unprecedented wealth in the past, but to maintain a position of leadership in the global economy, we believe that old ways of thinking and acting have to change and new approaches have to be adopted.
 
 Need proof?    
 `,
     features: [
-      "90% OF CEO’S SAY THEIR BUSINESS MODELS ARE NOT ECONOMICALL Y VIABLE AS THEIR SECTOR DIGITALISES.",
+      "90% OF CEO SAY THEIR BUSINESS MODELS ARE NOT ECONOMICALL Y VIABLE AS THEIR SECTOR DIGITALISES.",
       "85% OF DIGITAL INVESTMENTS TODAY HAVE DELIVERED ZERO OR NEGATIVE PROFIT AFTER COST OF CAPITAL.",
-      "AT THE SAME TIME 70% OF THE WORLD’S TOP 10 COMPANIES ARE“UNICORN” START-UPS ARE PLATFORMS, ALL OF THEM FROM THE US AND CHINA.",
+      "70% of the world’s most valuable companies are platforms, but not one is from Europe.",
+    ],
+    communityTitle: [
+      "FIGHTBACK:",
+      `
+A COMMUNITY
+OF LIKE-MINDED
+FORWARD-THINKERS.`,
+    ],
+    communityDescription: `
+We believe that, despite the new challenges posed, established corporations have profound advantages and the rapidly unfolding Fourth Industrial Revolution is an opportunity to solve many of the biggest issues of our time, such as climate change.
+
+The Fightback Movement is about collaboration; not just between tech entrepreneurs, business leaders, and policy-makers, but across industries and nations, with the aim of building a pan-European ecosystem, where knowledge, growth capital, and technical capabilities can be shared and harnessed. When coupled with an entrepreneurial mindset, incumbent businesses will then be in a strong position to build sustainable businesses fit for the future.
+
+But, no technological change can take place without a shift in mindset. A cultural change is essential, beginning with business leaders in incumbent organisations. Only then can large corporates utilise their strong assets and digitalise their business with new innovative business models. We all share a responsibility, and change must happen, today, to ensure prosperity for future generations.`,
+    communityPeople: [
+      {
+        name: "Michael Stephanblome",
+        company: "Co-Founder and CSO, Factor10 GmbH",
+        image: "/media/speakers/Michael_Stephanblome.jpg",
+      },
+      {
+        name: "Felix	Staeritz",
+        company: "Co-Founder and CEO, Factor10 GmbH",
+        image: "/media/speakers/Felix_Staeritz.jpg",
+      },
+      {
+        name: "Lionel	Paillet",
+        company: "Advisor, Understory, Inc.",
+        image: "/media/speakers/Lionel_Paillet_Nest.jpg",
+      },
+      {
+        name: "Dr. Ulrich	Faisst",
+        company: "Digital Transformation Officer, Trumpf GmbH & Co. KG",
+        image: "/media/speakers/UllrichFaisst_Trumpf.jpg",
+      },
+      {
+        name: "Simon	Torrance",
+        company: "Managing Director UK, Factor10 GmbH",
+        image: "/media/speakers/Simon_Torrance.png",
+      },
+      {
+        name: "Martina	Larkin",
+        company:
+          "Head of Regional Strategies - Europe and Eurasia, World Economic Forum",
+        image: "/media/speakers/Martina_Larkin_WEF_Head_of_Europe.jpg",
+      },
+      {
+        name: "Brigitte	Mohn",
+        company: "Board Member, Bertelsmann Stiftung",
+        image: "/media/speakers/BrigitteMohn_Bertelsmann_1.jpg",
+      },
     ],
   },
 };

@@ -11,6 +11,7 @@ import Header from "components/v2/header";
 import AngledContainer from "components/v2/angledContainer";
 
 import MembersHero from "./members-hero";
+import Community from "./community";
 
 function Members() {
   return (
@@ -24,9 +25,11 @@ function Members() {
             features={staticData.members.features}
           />
         </Wrapper>
-        <AngledContainer background={"grey"}>
-          <Wrapper>Text</Wrapper>
-        </AngledContainer>
+        <Community
+          title={staticData.members.communityTitle}
+          description={staticData.members.communityDescription}
+          people={staticData.members.communityPeople}
+        />
         <AngledContainer background={"dark"} top mirror>
           <Wrapper pt={9} pb={7}>
             Footer

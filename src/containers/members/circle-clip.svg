@@ -1,0 +1,5 @@
+<svg>
+    <clipPath id="circle-clip" clipPathUnits="objectBoundingBox">
+        <circle cx=".5" cy=".5" r=".5"></circle>
+    </clipPath>
+</svg>
