@@ -6,28 +6,28 @@ import AngledContainer from "./index";
 storiesOf("V2/AngledContainer", module)
   .add("Simple", () => <AngledContainer>AngledContainer</AngledContainer>)
   .add("Mirrored", () => (
-    <AngledContainer mirror background="red">
-      AngledContainer Mirrored Red
+    <AngledContainer mirror background="yellow">
+      AngledContainer Mirrored yellow
     </AngledContainer>
   ))
   .add("One direction", () => (
     <div>
-      <AngledContainer right background="red">
-        AngledContainer Right Red
+      <AngledContainer right background="purple">
+        AngledContainer Right purple
       </AngledContainer>
-      <AngledContainer left background="blue">
-        AngledContainer Left Blue
+      <AngledContainer left background="green">
+        AngledContainer Left green
       </AngledContainer>
     </div>
   ))
   .add("One side", () => (
     <div>
-      <AngledContainer background="red" top>
-        AngledContainer Top Red
+      <AngledContainer background="dark" top>
+        AngledContainer Top dark
       </AngledContainer>
       <div>space</div>
-      <AngledContainer background="blue" bottom right>
-        AngledContainer bottom Blue
+      <AngledContainer background="green" bottom right>
+        AngledContainer bottom green
       </AngledContainer>
     </div>
   ));

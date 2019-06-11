@@ -6,6 +6,22 @@ import AngledDivider from "../angledDivider";
 
 const DecoratedAngledContainer = styled(Box)``;
 const DecoratedAngledContainerContent = styled(Box)`
+  color: ${props => {
+    switch (props.background) {
+      case "yellow":
+        return props.theme.colors.dark;
+      case "dark":
+        return props.theme.colors.defaultInverted;
+      case "accent":
+        return "white";
+      case "purple":
+        return "white";
+      case "green":
+        return "white";
+      default:
+        return null;
+    }
+  }};
   background-color: ${props =>
     props.background
       ? props.theme.colors[props.background]
@@ -26,7 +42,7 @@ const AngledContainer = props => {
         />
       ) : null}
 
-      <DecoratedAngledContainerContent background={background}>
+      <DecoratedAngledContainerContent py={10} background={background}>
         {children}
       </DecoratedAngledContainerContent>
       {!top ? (
