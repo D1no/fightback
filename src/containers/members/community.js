@@ -2,20 +2,20 @@ import React from "react";
 import styled from "styled-components";
 import { Box, Flex, Text, Link } from "rebass";
 
-import AngledContainer from "../../components/v2/angledContainer";
-import Wrapper from "../../components/v2/wrapper";
-import MarkdownText from "../../components/v2/markdownText";
-import Title from "../../components/v2/title";
-import { ReactComponent as CircleClip } from "./circle-clip.svg";
+import AngledContainer from "components/v2/angledContainer";
+import Wrapper from "components/v2/wrapper";
+import MarkdownText from "components/v2/markdownText";
+import Title from "components/v2/title";
+// import { ReactComponent as CircleClip } from "./circle-clip.svg";
 import { ReactComponent as ArrowSVG } from "./arrow.svg";
 import { responsiveDisplayProp } from "containers/theme";
 
-const StyledCircleClip = styled(CircleClip)`
-  position: absolute;
-  z-index: -1;
-  width: 0;
-  height: 0;
-`;
+// const StyledCircleClip = styled(CircleClip)`
+//   position: absolute;
+//   z-index: -1;
+//   width: 0;
+//   height: 0;
+// `;
 
 const MembersTitle = styled(Text)`
   white-space: pre-wrap;
@@ -39,7 +39,9 @@ const Image = styled(Box)`
   height: 0;
   padding-bottom: 100%;
   overflow: hidden;
-  clip-path: url(#circle-clip);
+  //clip-path: url(#circle-clip);
+  border-radius: 50em;
+  overflow: hidden;
 
   img {
     z-index: -1;
@@ -134,7 +136,7 @@ const Community = props => {
             justifyContent={["space-between", "space-between", "flex-end"]}
             ml={[0, 0, -7]}
           >
-            <StyledCircleClip />
+            {/*<StyledCircleClip />*/}
             {preparedPeopleList.map((person, index) => {
               if (!(person.name && person.image)) {
                 return person;

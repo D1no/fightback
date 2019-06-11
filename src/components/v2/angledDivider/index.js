@@ -8,6 +8,10 @@ const DecoratedAngledDivider = styled(SVG)`
   height: 120px;
   width: 100%;
   min-width: 1500px;
+  transform: scale(
+    ${props => (props.mirror ? "-" : "")}1,
+    ${props => (props.flip ? "-" : "")}1
+  );
   fill: ${props =>
     props.fill
       ? props.theme.colors[props.fill]
@@ -17,11 +21,7 @@ const DecoratedAngledDivider = styled(SVG)`
 `;
 
 const AngledDivider = props => {
-  const transform = `scale(${props.mirror ? "-" : ""}1,${
-    props.flip ? "-" : ""
-  }1)`;
-
-  return <DecoratedAngledDivider transform={transform} fill={props.fill} />;
+  return <DecoratedAngledDivider {...props} />;
 };
 
 export default AngledDivider;
