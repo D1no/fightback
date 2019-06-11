@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 
-import Theme from "containers/theme";
+// import Theme from "containers/theme";
+import { ThemeV2 } from "containers/theme";
 import Provider from "providers";
-import Home from "containers/home";
+// import Home from "containers/home";
+import Members from "containers/members";
 
 let delay = 1500;
 
@@ -14,9 +16,12 @@ class App extends Component {
   render() {
     return (
       <Provider>
-        <Theme>
-          <Home />
-        </Theme>
+        {/*<Theme>*/}
+        {/*  <Home />*/}
+        {/*</Theme>*/}
+        <ThemeV2>
+          <Members />
+        </ThemeV2>
       </Provider>
     );
   }

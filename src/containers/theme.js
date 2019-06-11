@@ -19,6 +19,7 @@ const lightTheme = {
     "85em", // 02 - most popular desktop and up
     "118.75em", // 03 - full hd and up
   ],
+  defaultLineHeight: 1.5,
   lineHeights: [
     '11px', // 00
     '16px', // 01
@@ -40,6 +41,7 @@ const lightTheme = {
     58,  // 08
   ],
   colors: {
+    get main() { return this.black },
     // Main
     black: "#0D121A",
     light: "#C2C3C6",
@@ -100,6 +102,85 @@ const lightTheme = {
 lightTheme.breakpoints.md = lightTheme.breakpoints[0];
 lightTheme.breakpoints.xl = lightTheme.breakpoints[1];
 lightTheme.breakpoints.xxl = lightTheme.breakpoints[2];
+
+const themev2 = {
+  maxWidth: "1080px",
+  breakpoints: [
+    "48em", // 01 - iPad portrait and up
+    "64em", // 02 - iPad landscape and up
+    "118.75em", // 03 - full hd and up
+  ],
+  defaultLineHeight: "1.22",
+  lineHeights: [
+    "0.85", // 00
+  ],
+  fontSizes: [
+    8, // 00
+    12, // 01
+    14, // 02
+    16, // 03
+    18, // 04
+    21, // 05
+    24, // 06
+    32, // 07
+    48, // 08
+    68, // 09
+  ],
+  colors: {
+    get main() {
+      return this.default;
+    },
+    // Main
+    default: "#7D788C",
+    defaultInverted: "#50465F",
+    secondary: "#14C8B4",
+    dark: "#171728",
+    accent: "#FA0050",
+    // Variations
+    purple: "#A028A0",
+    green: "#0F8778",
+    yellow: "#FFD20A",
+    grey: "#F0F0F0",
+  },
+  backgroundColor: "#fff",
+  space: [
+    0, // 00
+    3, // 01
+    6, // 02
+    12, // 03
+    18, // 04
+    24, // 05
+    36, // 06
+    48, // 07
+    80, // 08
+    96, // 09
+    120, // 10
+    216, // 11
+    320, // 12
+  ],
+  heights: {
+    dropbox: 40,
+  },
+  fontWeights: {
+    get main() {
+      return this.regular;
+    },
+    // Variations
+    thin: 100,
+    regular: "normal",
+    bold: "bold",
+    // extraBold: 800,
+    black: 900,
+  },
+  fonts: {
+    main: '"Proxima Nova", Arial, sans-serif',
+  },
+};
+
+// aliases
+themev2.breakpoints.md = themev2.breakpoints[0];
+themev2.breakpoints.xl = themev2.breakpoints[1];
+themev2.breakpoints.xxl = themev2.breakpoints[2];
 
 /**=============================================================================
 
@@ -173,9 +254,9 @@ const GlobalPageStyle = createGlobalStyle`
   body {
     font-family: ${themeGet("fonts.main")};
     font-weight: ${themeGet("fontWeights.main")};
-    line-height: 1.5; // 27px
+    line-height: ${themeGet("defaultLineHeight")};
     font-size: 18px;
-    color: ${themeGet("colors.black")};
+    color: ${themeGet("colors.main")};
   }
   
   p {
@@ -561,6 +642,16 @@ const GlobalResetStyle = createGlobalStyle`
  */
 export default props => (
   <ThemeProvider theme={lightTheme}>
+    <>
+      <GlobalResetStyle />
+      <GlobalPageStyle />
+      {props.children}
+    </>
+  </ThemeProvider>
+);
+
+export const ThemeV2 = props => (
+  <ThemeProvider theme={themev2}>
     <>
       <GlobalResetStyle />
       <GlobalPageStyle />
