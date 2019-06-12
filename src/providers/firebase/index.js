@@ -10,18 +10,26 @@ import { useFirebaseDatabase } from "./connectorSuspenseHook";
 export function SubmitNewsletterForm(payload) {
   const dataRef = firebase.database().ref(`newsletter`);
   const newKey = dataRef.push().key;
+  const finalPayload = {
+    ...payload,
+    created: firebase.database.ServerValue.TIMESTAMP,
+  };
 
   return dataRef.update({
-    [newKey]: payload,
+    [newKey]: finalPayload,
   });
 }
 
 export function SubmitContactForm(payload) {
   const dataRef = firebase.database().ref(`contactForm`);
   const newKey = dataRef.push().key;
+  const finalPayload = {
+    ...payload,
+    created: firebase.database.ServerValue.TIMESTAMP,
+  };
 
   return dataRef.update({
-    [newKey]: payload,
+    [newKey]: finalPayload,
   });
 }
 

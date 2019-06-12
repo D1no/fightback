@@ -9,19 +9,19 @@ const DecoratedAngledDivider = styled(SVG)`
   width: 100%;
   min-width: 1500px;
   transform: scale(
-    ${props => (props.mirror ? "-" : "")}1,
-    ${props => (props.flip ? "-" : "")}1
+    ${props => (props.styleprops.mirror ? "-" : "")}1,
+    ${props => (props.styleprops.flip ? "-" : "")}1
   );
   fill: ${props =>
-    props.fill
-      ? props.theme.colors[props.fill]
-        ? props.theme.colors[props.fill]
-        : props.fill
+    props.styleprops.fill
+      ? props.theme.colors[props.styleprops.fill]
+        ? props.theme.colors[props.styleprops.fill]
+        : props.styleprops.fill
       : "#f0f0f0"};
 `;
 
 const AngledDivider = props => {
-  return <DecoratedAngledDivider {...props} />;
+  return <DecoratedAngledDivider styleprops={{ ...props }} />;
 };
 
 export default AngledDivider;
