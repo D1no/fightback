@@ -27,6 +27,7 @@ const Input = styled.input`
   border: none;
   box-sizing: border-box;
   margin-right: 8px;
+  border-radius: 0;
 
   ${space}
   ${width}
@@ -123,7 +124,7 @@ class Footer extends Component {
                 </Header>
                 <Box mb={9}>
                   {formSubmitted ? (
-                    <Box>You are now subscribed to our updates.</Box>
+                    <Box>Thank you for subscribing to our newsletter!</Box>
                   ) : (
                     <Form
                       action=""
@@ -162,6 +163,9 @@ class Footer extends Component {
                     target="_blank"
                   >
                     Imprint
+                  </LinkListItem>
+                  <LinkListItem href="https://preview.fightback.community">
+                    See old page
                   </LinkListItem>
                 </LinksList>
               </Box>

@@ -29,6 +29,7 @@ const Description = styled(Text)``;
 const Features = styled(Flex)``;
 const FeatureItem = styled(Flex)`
   border-top: solid 1px ${props => props.theme.colors.default};
+  text-transform: uppercase;
 
   @media (min-width: ${props => props.theme.breakpoints[0]}) {
     border-top: none;

@@ -30,6 +30,7 @@ const Input = styled.input`
   padding: 15px 20px;
   border: none;
   box-sizing: border-box;
+  border-radius: 0;
 
   ${space}
   ${width}
@@ -43,6 +44,7 @@ const Textarea = styled.textarea`
   padding: 15px 20px;
   border: none;
   box-sizing: border-box;
+  border-radius: 0;
 
   ${space}
   ${width}
@@ -118,7 +120,8 @@ class ContactUs extends Component {
               <MarkdownText source={description} />
               {formSubmitted ? (
                 <Box mt={5}>
-                  Thank you for submitting form. We'll get touch with you soon!
+                  Thank you for signing up! We will review your information and
+                  get back to you.
                 </Box>
               ) : (
                 <Form
