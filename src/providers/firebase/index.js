@@ -7,6 +7,24 @@ import React, { Component } from "react";
 import firebase from "./config";
 import { useFirebaseDatabase } from "./connectorSuspenseHook";
 
+export function SubmitNewsletterForm(payload) {
+  const dataRef = firebase.database().ref(`newsletter`);
+  const newKey = dataRef.push().key;
+
+  return dataRef.update({
+    [newKey]: payload,
+  });
+}
+
+export function SubmitContactForm(payload) {
+  const dataRef = firebase.database().ref(`contactForm`);
+  const newKey = dataRef.push().key;
+
+  return dataRef.update({
+    [newKey]: payload,
+  });
+}
+
 /**
  * Suspense enabled provider for a single key
  * @param path string

@@ -488,6 +488,14 @@ const GlobalResetStyle = createGlobalStyle`
   }
   
   /**
+   * Normalize forms styling
+   */
+  
+  input {
+    -webkit-appearance: none;
+  }
+  
+  /**
    * Remove the inner border and padding in Firefox.
    */
   

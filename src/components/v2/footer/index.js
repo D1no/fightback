@@ -1,8 +1,9 @@
-import React from "react";
+import React, { Component } from "react";
 import styled from "styled-components";
 import { space, width } from "styled-system";
 import { Box, Flex, Link, Text } from "rebass";
 
+import { SubmitNewsletterForm } from "providers/firebase";
 import { responsiveDisplayProp } from "containers/theme";
 
 import Logo from "components/v2/logo";
@@ -73,72 +74,103 @@ const LinkListItem = props => (
   </StyledListLink>
 );
 
-const Footer = props => {
-  return (
-    <DecoratedFooter>
-      <AngledContainer
-        background={"dark"}
-        top
-        mirror
-        contentPT={[7, 7, 9]}
-        contentPB={7}
-      >
-        <Wrapper>
-          <Flex flexDirection={["row"]} justifyContent={"space-between"}>
-            <LogoContainer display={[false, true]} width={[12 / 12, 5 / 12]}>
-              <Logo inverted="true" width={[110, 172]} />
-            </LogoContainer>
-            <Box width={[12 / 12, 6 / 12, 5 / 12]}>
-              <Header
-                mb={4}
-                fontSize={6}
-                fontWeight="bold"
-                color="white"
-                lineHeight={0}
-              >
-                RECEIVE OUR{"\n"}
-                LATEST UPDATES
-              </Header>
-              <Form
-                mb={9}
-                post="/"
-                onSubmit={e => {
-                  e.preventDefault();
-                }}
-              >
-                <Input type="email" placeholder="Email" />
-                <Button type="submit">Go</Button>
-              </Form>
-            </Box>
-          </Flex>
-          <Flex
-            flexDirection={["column-reverse", "row"]}
-            justifyContent={"space-between"}
-          >
-            <Box width={[12 / 12, 5 / 12]}>
-              <Text fontSize={3}>© 2019 Fightback. All rights reserved.</Text>
-            </Box>
-            <Box width={[12 / 12, 6 / 12, 5 / 12]} mb={[5, 0]}>
-              <LinksList>
-                <LinkListItem
-                  href="https://www.factor10.io/privacy/"
-                  target="_blank"
+class Footer extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { formSubmitted: false };
+  }
+  submitFormToFirebase = e => {
+    e.preventDefault();
+
+    const inputs = this.form.elements;
+
+    const payload = {
+      email: inputs["email"].value,
+    };
+
+    SubmitNewsletterForm(payload).then(() =>
+      this.setState({ formSubmitted: true })
+    );
+  };
+
+  render() {
+    const { formSubmitted } = this.state;
+
+    return (
+      <DecoratedFooter>
+        <AngledContainer
+          background={"dark"}
+          top
+          mirror
+          contentPT={[7, 7, 9]}
+          contentPB={7}
+        >
+          <Wrapper>
+            <Flex flexDirection={["row"]} justifyContent={"space-between"}>
+              <LogoContainer display={[false, true]} width={[12 / 12, 5 / 12]}>
+                <Logo inverted="true" width={[110, 172]} />
+              </LogoContainer>
+              <Box width={[12 / 12, 6 / 12, 5 / 12]}>
+                <Header
+                  mb={4}
+                  fontSize={6}
+                  fontWeight="bold"
+                  color="white"
+                  lineHeight={0}
                 >
-                  Privacy Policy
-                </LinkListItem>
-                <LinkListItem
-                  href="https://www.factor10.io/imprint/"
-                  target="_blank"
-                >
-                  Imprint
-                </LinkListItem>
-              </LinksList>
-            </Box>
-          </Flex>
-        </Wrapper>
-      </AngledContainer>
-    </DecoratedFooter>
-  );
-};
+                  RECEIVE OUR{"\n"}
+                  LATEST UPDATES
+                </Header>
+                <Box mb={9}>
+                  {formSubmitted ? (
+                    <Box>You are now subscribed to our updates.</Box>
+                  ) : (
+                    <Form
+                      action=""
+                      onSubmit={this.submitFormToFirebase}
+                      ref={form => (this.form = form)}
+                    >
+                      <Input
+                        type="email"
+                        placeholder="Email"
+                        name="email"
+                        required
+                      />
+                      <Button type="submit">Go</Button>
+                    </Form>
+                  )}
+                </Box>
+              </Box>
+            </Flex>
+            <Flex
+              flexDirection={["column-reverse", "row"]}
+              justifyContent={"space-between"}
+            >
+              <Box width={[12 / 12, 5 / 12]}>
+                <Text fontSize={3}>© 2019 Fightback. All rights reserved.</Text>
+              </Box>
+              <Box width={[12 / 12, 6 / 12, 5 / 12]} mb={[5, 0]}>
+                <LinksList>
+                  <LinkListItem
+                    href="https://www.factor10.io/privacy/"
+                    target="_blank"
+                  >
+                    Privacy Policy
+                  </LinkListItem>
+                  <LinkListItem
+                    href="https://www.factor10.io/imprint/"
+                    target="_blank"
+                  >
+                    Imprint
+                  </LinkListItem>
+                </LinksList>
+              </Box>
+            </Flex>
+          </Wrapper>
+        </AngledContainer>
+      </DecoratedFooter>
+    );
+  }
+}
 
 export default Footer;
