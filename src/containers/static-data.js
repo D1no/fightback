@@ -93,7 +93,7 @@ Europe has, for centuries, been a powerhouse of production and technical innovat
 Businesses in Europe have generated unprecedented wealth in the past, but to maintain a position of leadership in the global economy, we believe that old ways of thinking and acting have to change and new approaches have to be adopted.
 `,
     features: [
-      "90% OF CEO SAY THEIR BUSINESS MODELS ARE NOT ECONOMICALL Y VIABLE AS THEIR SECTOR DIGITALISES.",
+      "90% OF CEOs SAY THEIR BUSINESS MODELS ARE NOT ECONOMICALL Y VIABLE AS THEIR SECTOR DIGITALISES.",
       "85% OF DIGITAL INVESTMENTS TODAY HAVE DELIVERED ZERO OR NEGATIVE PROFIT AFTER COST OF CAPITAL.",
       "70% of the world’s most valuable companies are platforms, but not one is from Europe.",
     ],
