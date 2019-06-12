@@ -21,6 +21,7 @@ const Form = styled.form`
   display: block;
   ${space}
   ${width}
+  visibility: ${props => (props.formSubmitted ? "hidden" : null)};
 `;
 const Input = styled.input`
   width: 100%;
@@ -68,6 +69,14 @@ const Header = styled.h2`
   ${space}
 `;
 const Description = styled(Text)``;
+const FormHolder = styled(Box)`
+  position: relative;
+`;
+const FormSubmitSuccess = styled(Box)`
+  position: absolute;
+  font-weight: bold;
+  display: ${props => (props.formSubmitted ? "block" : "none")};
+`;
 
 class ContactUs extends Component {
   constructor(props) {
@@ -118,17 +127,16 @@ class ContactUs extends Component {
             </Header>
             <Description width={[12 / 12]}>
               <MarkdownText source={description} />
-              {formSubmitted ? (
-                <Box mt={5}>
+              <FormHolder mt={5}>
+                <FormSubmitSuccess formSubmitted={formSubmitted}>
                   Thank you for signing up! We will review your information and
                   get back to you.
-                </Box>
-              ) : (
+                </FormSubmitSuccess>
                 <Form
-                  mt={5}
                   action=""
                   onSubmit={this.submitFormToFirebase}
                   ref={form => (this.form = form)}
+                  formSubmitted={formSubmitted}
                 >
                   <Input
                     type="text"
@@ -153,7 +161,7 @@ class ContactUs extends Component {
                   />
                   <Button type="submit">Submit</Button>
                 </Form>
-              )}
+              </FormHolder>
             </Description>
           </Box>
         </Flex>

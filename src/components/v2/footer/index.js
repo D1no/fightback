@@ -14,6 +14,7 @@ const DecoratedFooter = styled(Box)``;
 
 const Form = styled.form`
   display: flex;
+  visibility: ${props => (props.formSubmitted ? "hidden" : null)};
   ${space}
   ${width}
 `;
@@ -69,6 +70,16 @@ const StyledListLink = styled(Link)`
   }
 `;
 
+const FormHolder = styled(Box)`
+  position: relative;
+`;
+
+const FormSubmitSuccess = styled(Box)`
+  position: absolute;
+  font-weight: bold;
+  display: ${props => (props.formSubmitted ? "block" : "none")};
+`;
+
 const LinkListItem = props => (
   <StyledListLink {...props} fontSize={3}>
     {props.children}
@@ -122,25 +133,25 @@ class Footer extends Component {
                   RECEIVE OUR{"\n"}
                   LATEST UPDATES
                 </Header>
-                <Box mb={9}>
-                  {formSubmitted ? (
-                    <Box>Thank you for subscribing to our newsletter!</Box>
-                  ) : (
-                    <Form
-                      action=""
-                      onSubmit={this.submitFormToFirebase}
-                      ref={form => (this.form = form)}
-                    >
-                      <Input
-                        type="email"
-                        placeholder="Email"
-                        name="email"
-                        required
-                      />
-                      <Button type="submit">Go</Button>
-                    </Form>
-                  )}
-                </Box>
+                <FormHolder mb={9}>
+                  <FormSubmitSuccess formSubmitted={formSubmitted}>
+                    Thank you for subscribing to our newsletter!
+                  </FormSubmitSuccess>
+                  <Form
+                    action=""
+                    onSubmit={this.submitFormToFirebase}
+                    ref={form => (this.form = form)}
+                    formSubmitted={formSubmitted}
+                  >
+                    <Input
+                      type="email"
+                      placeholder="Email"
+                      name="email"
+                      required
+                    />
+                    <Button type="submit">Go</Button>
+                  </Form>
+                </FormHolder>
               </Box>
             </Flex>
             <Flex
