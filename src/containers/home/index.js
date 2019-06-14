@@ -196,7 +196,7 @@ function Home() {
               grid={[
                 {
                   name: "Felix Staeritz",
-                  position: "Founder Factor10, Member World Economic Forum",
+                  position: "Founder FoundersLane, Member World Economic Forum",
                 },
                 {
                   name: "Simon Torrance",

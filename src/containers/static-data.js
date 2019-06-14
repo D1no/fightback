@@ -22,7 +22,7 @@ export default {
       },
       {
         name: "Holger Ewald",
-        position: "CDO Factor10, prev. CIO Kuka, CIO DE Bahn",
+        position: "CDO FoundersLane, prev. CIO Kuka, CIO DE Bahn",
         testimonial: "“A must-attend event for innovative corporates.",
         text:
           "Top quality guests and a special, open atmosphere. Interactive formats on highly relevant topics which create lots of insights and great conversations.”",
