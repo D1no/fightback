@@ -22,7 +22,7 @@ export default {
       },
       {
         name: "Holger Ewald",
-        position: "CDO Factor10, prev. CIO Kuka, CIO DE Bahn",
+        position: "CDO FoundersLane, prev. CIO Kuka, CIO DE Bahn",
         testimonial: "“A must-attend event for innovative corporates.",
         text:
           "Top quality guests and a special, open atmosphere. Interactive formats on highly relevant topics which create lots of insights and great conversations.”",
@@ -113,12 +113,12 @@ But, no technological change can take place without a shift in mindset. A cultur
     communityPeople: [
       {
         name: "Michael Stephanblome",
-        company: "Co-Founder and CSO, Factor10 GmbH",
+        company: "Co-Founder and CSO, FoundersLane",
         image: "/media/speakers/Michael_Stephanblome.jpg",
       },
       {
         name: "Felix	Staeritz",
-        company: "Co-Founder and CEO, Factor10 GmbH",
+        company: "Co-Founder and CEO, FoundersLane",
         image: "/media/speakers/Felix_Staeritz.jpg",
       },
       {
@@ -133,7 +133,7 @@ But, no technological change can take place without a shift in mindset. A cultur
       },
       {
         name: "Simon	Torrance",
-        company: "Managing Director UK, Factor10 GmbH",
+        company: "Managing Director UK, FoundersLane",
         image: "/media/speakers/Simon_Torrance.png",
       },
       {

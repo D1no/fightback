@@ -164,13 +164,13 @@ class Footer extends Component {
               <Box width={[12 / 12, 6 / 12, 5 / 12]} mb={[5, 0]}>
                 <LinksList>
                   <LinkListItem
-                    href="https://www.factor10.io/privacy/"
+                    href="https://founderslane.com/privacy/"
                     target="_blank"
                   >
                     Privacy Policy
                   </LinkListItem>
                   <LinkListItem
-                    href="https://www.factor10.io/imprint/"
+                    href="https://founderslane.com/imprint/"
                     target="_blank"
                   >
                     Imprint

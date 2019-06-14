@@ -15,11 +15,11 @@ const FooterContainer = props => {
         aside={<SheetsyncLine path={"static/footer/copyright"} />}
         title={
           <Fragment>
-            <Link href="https://www.factor10.io/privacy/" target="_blank">
+            <Link href="https://founderslane.com/privacy/" target="_blank">
               privacy
             </Link>
             {` // `}
-            <Link href="https://www.factor10.io/imprint/" target="_blank">
+            <Link href="https://founderslane.com/imprint/" target="_blank">
               imprint
             </Link>
           </Fragment>
